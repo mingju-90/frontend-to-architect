@@ -1,0 +1,2461 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="从初级前端到全栈架构师的内容型学习手册，覆盖 HTML、CSS、JavaScript、TypeScript、Vue、React、Node、数据库、部署、安全与系统设计。">
+    <title>从初级前端到全栈架构师</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">F2A</div>
+          <div>
+            <h1>从初级前端到全栈架构师</h1>
+            <p>内容型学习手册：先理解，再用项目验证</p>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <div class="overall-progress">
+            <div class="progress-copy">
+              <span>学习进度</span>
+              <strong id="overallProgressText">0 / 24</strong>
+            </div>
+            <div class="progress" id="overallProgress" role="progressbar" aria-label="学习进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <span style="width: 0%"></span>
+            </div>
+          </div>
+          <button class="btn" type="button" id="resetProgress">重置进度</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <aside class="sidebar" aria-label="章节导航">
+        <div class="sidebar-heading">
+          <span>成长路线</span>
+          <span id="sidebarProgressText">0%</span>
+        </div>
+        <nav class="chapter-nav" id="chapterNav">
+          <section class="nav-stage">
+            <button class="nav-stage-button" type="button" data-stage="foundation">
+              <strong>前端起步</strong>
+              <span>0/5</span>
+            </button>
+            
+                  <button class="nav-chapter" type="button" data-go-chapter="html-semantics">
+                    <span class="nav-chapter-no">01</span>
+                    <span class="nav-chapter-title">HTML 文档结构与语义</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+                  <button class="nav-chapter" type="button" data-go-chapter="css-layout">
+                    <span class="nav-chapter-no">02</span>
+                    <span class="nav-chapter-title">CSS 布局与视觉系统</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+                  <button class="nav-chapter" type="button" data-go-chapter="javascript-core">
+                    <span class="nav-chapter-no">03</span>
+                    <span class="nav-chapter-title">JavaScript 语言核心</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+                  <button class="nav-chapter" type="button" data-go-chapter="browser-http">
+                    <span class="nav-chapter-no">04</span>
+                    <span class="nav-chapter-title">浏览器、DOM、事件与 HTTP</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+                  <button class="nav-chapter" type="button" data-go-chapter="git-quality">
+                    <span class="nav-chapter-no">05</span>
+                    <span class="nav-chapter-title">Git、包管理与调试基础</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+          </section>
+        
+          <section class="nav-stage">
+            <button class="nav-stage-button" type="button" data-stage="application">
+              <strong>前端应用与工程</strong>
+              <span>0/5</span>
+            </button>
+            
+                  <button class="nav-chapter" type="button" data-go-chapter="typescript">
+                    <span class="nav-chapter-no">06</span>
+                    <span class="nav-chapter-title">TypeScript 类型系统</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+                  <button class="nav-chapter" type="button" data-go-chapter="vue">
+                    <span class="nav-chapter-no">07</span>
+                    <span class="nav-chapter-title">Vue 应用开发</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+                  <button class="nav-chapter" type="button" data-go-chapter="react">
+                    <span class="nav-chapter-no">08</span>
+                    <span class="nav-chapter-title">React 应用开发</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+                  <button class="nav-chapter" type="button" data-go-chapter="frontend-data-flow">
+                    <span class="nav-chapter-no">09</span>
+                    <span class="nav-chapter-title">前端路由、状态与数据流</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+                  <button class="nav-chapter" type="button" data-go-chapter="frontend-engineering">
+                    <span class="nav-chapter-no">10</span>
+                    <span class="nav-chapter-title">前端工程化、测试与性能</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+          </section>
+        
+          <section class="nav-stage">
+            <button class="nav-stage-button" type="button" data-stage="backend">
+              <strong>服务端与数据</strong>
+              <span>0/7</span>
+            </button>
+            
+                  <button class="nav-chapter" type="button" data-go-chapter="node-runtime">
+                    <span class="nav-chapter-no">11</span>
+                    <span class="nav-chapter-title">Node.js 运行时与服务端基础</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+                  <button class="nav-chapter" type="button" data-go-chapter="http-api">
+                    <span class="nav-chapter-no">12</span>
+                    <span class="nav-chapter-title">HTTP API 与接口契约</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+                  <button class="nav-chapter" type="button" data-go-chapter="auth-security">
+                    <span class="nav-chapter-no">13</span>
+                    <span class="nav-chapter-title">认证、授权与服务端安全</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+                  <button class="nav-chapter" type="button" data-go-chapter="database-model-sql">
+                    <span class="nav-chapter-no">14</span>
+                    <span class="nav-chapter-title">关系建模与 SQL</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+                  <button class="nav-chapter" type="button" data-go-chapter="transactions-indexes">
+                    <span class="nav-chapter-no">15</span>
+                    <span class="nav-chapter-title">事务、索引与查询优化</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+                  <button class="nav-chapter" type="button" data-go-chapter="cache-consistency">
+                    <span class="nav-chapter-no">16</span>
+                    <span class="nav-chapter-title">缓存、Redis 与一致性</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+                  <button class="nav-chapter" type="button" data-go-chapter="async-backend">
+                    <span class="nav-chapter-no">17</span>
+                    <span class="nav-chapter-title">异步任务、队列与实时通信</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+          </section>
+        
+          <section class="nav-stage">
+            <button class="nav-stage-button" type="button" data-stage="production">
+              <strong>生产与架构</strong>
+              <span>0/4</span>
+            </button>
+            
+                  <button class="nav-chapter" type="button" data-go-chapter="delivery">
+                    <span class="nav-chapter-no">18</span>
+                    <span class="nav-chapter-title">容器、CI/CD 与发布</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+                  <button class="nav-chapter" type="button" data-go-chapter="scale-reliability">
+                    <span class="nav-chapter-no">19</span>
+                    <span class="nav-chapter-title">容量、弹性、可观测性与容灾</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+                  <button class="nav-chapter" type="button" data-go-chapter="security-compliance">
+                    <span class="nav-chapter-no">20</span>
+                    <span class="nav-chapter-title">安全、合规与供应链</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+                  <button class="nav-chapter" type="button" data-go-chapter="system-design">
+                    <span class="nav-chapter-no">21</span>
+                    <span class="nav-chapter-title">系统设计与数据流</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+          </section>
+        
+          <section class="nav-stage">
+            <button class="nav-stage-button" type="button" data-stage="architect">
+              <strong>全栈架构师</strong>
+              <span>0/3</span>
+            </button>
+            
+                  <button class="nav-chapter" type="button" data-go-chapter="requirements-domain">
+                    <span class="nav-chapter-no">22</span>
+                    <span class="nav-chapter-title">需求、领域建模与技术战略</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+                  <button class="nav-chapter" type="button" data-go-chapter="architecture-decisions">
+                    <span class="nav-chapter-no">23</span>
+                    <span class="nav-chapter-title">架构决策、风险与取舍</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+                  <button class="nav-chapter" type="button" data-go-chapter="team-engineering">
+                    <span class="nav-chapter-no">24</span>
+                    <span class="nav-chapter-title">团队工程能力与架构演进</span>
+                    <span class="nav-state" aria-hidden="true"></span>
+                  </button>
+                
+          </section>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <section class="growth-strip" aria-label="五个成长阶段">
+          <div class="growth-track" id="growthTrack">
+          <button class="growth-step" type="button" data-stage="foundation">
+            <strong>前端起步</strong>
+            <span>0/5 章 · 0%</span>
+          </button>
+        
+          <button class="growth-step" type="button" data-stage="application">
+            <strong>前端应用与工程</strong>
+            <span>0/5 章 · 0%</span>
+          </button>
+        
+          <button class="growth-step" type="button" data-stage="backend">
+            <strong>服务端与数据</strong>
+            <span>0/7 章 · 0%</span>
+          </button>
+        
+          <button class="growth-step" type="button" data-stage="production">
+            <strong>生产与架构</strong>
+            <span>0/4 章 · 0%</span>
+          </button>
+        
+          <button class="growth-step" type="button" data-stage="architect">
+            <strong>全栈架构师</strong>
+            <span>0/3 章 · 0%</span>
+          </button>
+        </div>
+        </section>
+
+        <div class="toolbar">
+          <label class="field">
+            <span class="field-label">搜索内容</span>
+            <span class="search-wrap">
+              <input class="search-input" id="searchInput" type="search" placeholder="搜索概念、机制、实践或误区" autocomplete="off">
+            </span>
+          </label>
+
+          <div class="field">
+            <span class="field-label">成长阶段</span>
+            <div class="segmented" aria-label="按阶段筛选">
+              <button class="segment" type="button" data-level="all" aria-pressed="true">
+                全部
+              </button>
+              <button class="segment" type="button" data-level="L1" aria-pressed="false">
+                L1
+              </button>
+              <button class="segment" type="button" data-level="L2" aria-pressed="false">
+                L2
+              </button>
+              <button class="segment" type="button" data-level="L3" aria-pressed="false">
+                L3
+              </button>
+              <button class="segment" type="button" data-level="L4" aria-pressed="false">
+                L4
+              </button>
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="field-label">学习状态</span>
+            <div class="segmented" aria-label="按状态筛选">
+              <button class="segment" type="button" data-status="all" aria-pressed="true">
+                全部
+              </button>
+              <button class="segment" type="button" data-status="open" aria-pressed="false">
+                未掌握
+              </button>
+              <button class="segment" type="button" data-status="done" aria-pressed="false">
+                已掌握
+              </button>
+            </div>
+          </div>
+
+          <button class="btn" type="button" id="toggleExpand">展开全部</button>
+        </div>
+
+        <section class="next-step" id="nextStep" aria-live="polite">
+      <div>
+        <div class="next-step-label">推荐下一步</div>
+        <strong>HTML 文档结构与语义</strong>
+        <p>HTML 不是简单的标签集合，而是浏览器建立文档树、理解内容职责和接入样式与脚本的基础输入。</p>
+      </div>
+      <button class="btn btn-primary" type="button" data-go-chapter="html-semantics">打开章节</button>
+    </section>
+        <p class="result-line" id="resultLine">当前显示 24 章，共 24 章</p>
+        <div class="chapter-list" id="chapterList">
+          <section class="stage-heading" id="stage-foundation">
+            <small>阶段 01</small>
+            <h2>前端起步</h2>
+            <p>先理解浏览器、页面结构、样式系统和 JavaScript 语言模型，形成可独立完成页面和交互的能力。 · 0/5 已掌握</p>
+          </section>
+          
+      <article class="chapter" data-chapter-id="html-semantics">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 HTML 文档结构与语义 已掌握">
+            <input type="checkbox" data-chapter-check="html-semantics">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="html-semantics" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l1">L1</span>
+              <h3>HTML 文档结构与语义</h3>
+            </span>
+            <span class="chapter-subtitle">从浏览器解析、DOM 树到语义化和可访问性</span>
+            <p class="chapter-summary">HTML 不是简单的标签集合，而是浏览器建立文档树、理解内容职责和接入样式与脚本的基础输入。</p>
+            <span class="chapter-meta">
+              <span class="tag">HTML</span><span class="tag">DOM</span><span class="tag">无障碍</span><span class="tag">页面结构</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>01</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>所有前端框架最终都会生成 HTML。元素层级、语义和可访问性一旦错误，Vue、React 或 CSS 都只能在错误基础上打补丁。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>浏览器如何把 HTML 变成页面</h4>
+        <p>浏览器收到 HTML 后，会先进行词法和语法解析，把标签、文本和属性转换成 Token，再构造成一棵 DOM 树。CSS 会形成 CSSOM，两者结合产生渲染树，随后进入布局、绘制和合成。JavaScript 可以读取和修改 DOM，因此 HTML 的结构质量会直接影响样式、交互和性能。</p><p>DOCTYPE 不是普通标签，它决定浏览器使用标准模式还是怪异模式。head 负责元信息、资源链接和页面描述，body 负责可见内容。标签嵌套、属性、内容和元素关系，最终都会反映为 DOM 节点的层次关系。</p>
+        <ul class="article-bullets"><li>HTML 是文档输入，DOM 是浏览器解析后的对象模型。</li><li>CSSOM 与 DOM 结合后才形成可布局的渲染树。</li><li>修改 DOM 可能触发样式计算、布局、绘制和合成。</li></ul>
+        <pre><code>&lt;!doctype html&gt;
+&lt;html lang="zh-CN"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+    &lt;title&gt;巡检任务&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;main aria-labelledby="page-title"&gt;
+      &lt;h1 id="page-title"&gt;巡检任务&lt;/h1&gt;
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </section>
+    
+      <section class="article-section">
+        <h4>语义化不是装饰，而是接口</h4>
+        <p>语义化标签表达内容职责：header 表示页头，nav 表示导航，main 表示页面唯一主要内容区，section 表示有主题的区块，article 表示可以独立成立的内容，aside 表示补充内容，footer 表示页脚。浏览器、搜索引擎、屏幕阅读器和团队开发者都依赖这些含义理解页面。</p><p>标题层级同样属于结构。一个页面通常只应有一个 h1，后续标题按内容层级使用 h2、h3，不能为了字号大小跳级。按钮、链接、表单和图片也需要使用正确元素，而不是给 div 随意绑定点击事件。</p>
+        <ul class="article-bullets"><li>先根据内容职责选择标签，再根据设计系统决定外观。</li><li>交互控件优先使用原生 button、a、input 和 select。</li><li>所有图片都需要判断是内容图片还是装饰图片。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>无障碍与可读结构</h4>
+        <p>可访问性从正确 HTML 开始。表单控件需要可访问名称，图片需要合适的替代文本，交互操作需要键盘支持，焦点顺序要符合视觉顺序。ARIA 只在原生语义不足时补充，不能用来修复错误结构。</p><p>结构清晰的页面更容易测试和维护。对全栈开发者而言，HTML 是接口契约的起点：它连接浏览器、辅助技术、样式系统和后续框架组件。</p>
+        <ul class="article-bullets"><li>label 与输入控件要正确关联。</li><li>不要用占位符代替标签。</li><li>不要移除浏览器默认焦点样式而不提供替代方案。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能解释 HTML 解析、DOM 和渲染树的基本关系。</li><li>能根据内容职责选择合适的语义元素。</li><li>能编写键盘可操作、结构可检查的基础页面。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>手写一个包含页头、导航、主内容、侧栏、文章和页脚的语义化页面，并为其添加移动端样式和基础无障碍属性。</p>
+                <ul class="article-list">
+                  <li>页面只有一个 main 和一个 h1。</li><li>所有表单控件都有可访问名称。</li><li>只用键盘就能完成主要导航和交互。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>把所有内容都用 div 表示。</li><li>根据视觉大小错误选择标题层级。</li><li>用 ARIA 属性掩盖错误的原生语义。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>架构师需要理解 HTML 是跨端输出的基础契约。Web、移动端 WebView、SEO 页面和可访问性能力都共享这套结构。结构稳定后，组件库、设计系统和自动化测试才有可靠基础。</p>
+          </aside>
+        </div>
+      </article>
+    
+      <article class="chapter" data-chapter-id="css-layout">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 CSS 布局与视觉系统 已掌握">
+            <input type="checkbox" data-chapter-check="css-layout">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="css-layout" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l1">L1</span>
+              <h3>CSS 布局与视觉系统</h3>
+            </span>
+            <span class="chapter-subtitle">层叠、盒模型、Flex、Grid、响应式和设计令牌</span>
+            <p class="chapter-summary">CSS 通过层叠规则把结构化内容变成可读界面，布局系统决定页面如何适应内容、屏幕和状态变化。</p>
+            <span class="chapter-meta">
+              <span class="tag">CSS</span><span class="tag">布局</span><span class="tag">响应式</span><span class="tag">设计系统</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>02</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>前端界面的质量很大一部分取决于 CSS 结构。布局、状态和响应式混乱会持续消耗团队时间，也会让组件库无法稳定复用。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>层叠、继承与优先级</h4>
+        <p>CSS 的冲突解决不是简单比选择器长短。样式来源、!important、层叠层、作用域、优先级和源码顺序都会参与计算。继承只发生在部分属性上，很多属性不会自动从父元素传给子元素。</p><p>当样式频繁使用 !important、深层后代选择器或全局覆盖时，代码会变成互相抢权。合理做法是按基础层、组件层、业务层和工具层组织样式，并保持选择器短而明确。</p>
+        <ul class="article-bullets"><li>先看来源和层叠顺序，再看具体性和源码顺序。</li><li>避免用 !important 解决结构问题。</li><li>组件样式应控制自己的边界，减少向外影响。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>盒模型与现代布局</h4>
+        <p>元素尺寸由内容、内边距、边框和外边距共同决定。border-box 让 width 包含边框和内边距，通常更适合组件布局。普通流负责页面基本排列，Flex 适合一维排列，Grid 适合二维轨道，定位适合浮层和少量脱离普通流的结构。</p><p>响应式设计不是只加几个媒体查询，而是让内容在最小屏幕到超宽屏幕之间自然重排。断点应由内容开始拥挤的位置决定，而不是机械照搬设备型号。</p>
+        <ul class="article-bullets"><li>优先使用 Flex 和 Grid 表达布局关系。</li><li>为固定格式组件定义稳定尺寸和最小宽度。</li><li>避免用固定高度锁死动态内容。</li></ul>
+        <pre><code>.page {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 720px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+      </section>
+    
+      <section class="article-section">
+        <h4>设计令牌与主题</h4>
+        <p>颜色、间距、字体、圆角、阴影和状态应该被抽象为设计令牌。令牌把视觉规则从组件实现中抽离，使暗色模式、多品牌和一致性调整不需要逐个修改组件。</p><p>好的 CSS 架构不仅关注当前页面，还关注状态复用和可维护性。悬停、聚焦、禁用、加载、错误、空状态和移动端排列都应该在组件设计阶段考虑。</p>
+        <ul class="article-bullets"><li>使用语义令牌而不是具体颜色名组织主题。</li><li>颜色不能单独表达状态，要配合文字或图形。</li><li>关键控件在窄屏下必须保持可点击尺寸。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能解释 CSS 层叠、继承和盒模型。</li><li>能使用 Flex 或 Grid 完成响应式布局。</li><li>能建立基础设计令牌和组件样式边界。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>实现一个包含侧栏、导航、数据表格和移动端抽屉的后台页面，并设计 light/dark 主题令牌。</p>
+                <ul class="article-list">
+                  <li>320px 到宽屏均不出现内容重叠或横向溢出。</li><li>交互状态和焦点状态清晰可见。</li><li>组件样式不会依赖偶然的父级选择器。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>依赖 !important 处理所有样式冲突。</li><li>使用绝对定位拼装普通页面布局。</li><li>只考虑静态状态，忽略加载、错误和空状态。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>设计系统是架构的一部分。架构师需要把视觉令牌、组件边界、响应式策略和无障碍要求沉淀为可执行规范，而不是只交付一套看起来不错的页面。</p>
+          </aside>
+        </div>
+      </article>
+    
+      <article class="chapter" data-chapter-id="javascript-core">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 JavaScript 语言核心 已掌握">
+            <input type="checkbox" data-chapter-check="javascript-core">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="javascript-core" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l1">L1</span>
+              <h3>JavaScript 语言核心</h3>
+            </span>
+            <span class="chapter-subtitle">作用域、闭包、对象模型、异步、模块和错误</span>
+            <p class="chapter-summary">JavaScript 的运行时模型决定状态如何保持、异步如何调度、错误如何传播，以及模块之间如何协作。</p>
+            <span class="chapter-meta">
+              <span class="tag">JavaScript</span><span class="tag">闭包</span><span class="tag">异步</span><span class="tag">模块</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>03</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>Vue、React、Node 和任何前端工具都建立在 JavaScript 语言模型上。语言基础不牢，框架问题最终会表现为状态不可解释、异步失控和错误难以恢复。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>作用域、闭包与 this</h4>
+        <p>JavaScript 使用词法作用域，函数在定义时就能访问外层变量。闭包是函数与其定义环境的组合，它使内部状态在函数执行结束后仍然可以保留。防抖、节流、缓存、Hook 和模块封装都依赖闭包。</p><p>this 取决于调用方式，而不是函数定义位置。普通调用、对象方法、call/apply、new 和箭头函数有不同的绑定规则。箭头函数没有自己的 this，适合沿用外层上下文。</p>
+        <ul class="article-bullets"><li>闭包捕获的是作用域中的变量绑定，不是某个瞬间的复制值。</li><li>异步回调中的变量值要在回调真正执行时判断。</li><li>能用普通参数和显式上下文，就不要依赖隐式 this。</li></ul>
+        <pre><code>function createCounter() {
+  let count = 0
+  return () =&gt; {
+    count += 1
+    return count
+  }
+}
+
+const next = createCounter()
+console.log(next()) // 1
+console.log(next()) // 2</code></pre>
+      </section>
+    
+      <section class="article-section">
+        <h4>对象、原型与数据转换</h4>
+        <p>JavaScript 对象通过原型链查找属性。class 是原型继承的语法糖，理解原型有助于阅读库源码和分析方法来源。对象、数组、Map 和 Set 提供不同的数据访问和迭代能力。</p><p>业务代码大量时间花在数据转换。浅拷贝和深拷贝、可变与不可变、排序稳定性、稀疏数组和引用共享都会影响状态更新。应在业务边界使用明确的数据结构，而不是把任意对象层层传递。</p>
+        <ul class="article-bullets"><li>先判断数据需要按顺序访问、按键访问还是去重访问。</li><li>浅拷贝只复制第一层引用。</li><li>状态更新要避免意外修改共享对象。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>异步、模块和异常</h4>
+        <p>Promise 把异步结果统一成可组合对象，async/await 让异步流程更接近同步阅读方式，但底层仍然是事件循环调度。并发控制、超时、取消和部分失败处理不能靠 await 关键字自动完成。</p><p>模块把代码切成有明确入口和依赖边界的小单元。错误则必须跨越同步、异步和模块边界传播到可处理的层级。生产中不能只 console.log 错误，也不能让 Promise 拒绝无人处理。</p>
+        <ul class="article-bullets"><li>Promise.all 用于全部成功，Promise.allSettled 用于保留部分结果。</li><li>取消需要把信号传到真正执行 I/O 的位置。</li><li>catch 必须保留上下文或转换成明确业务错误。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能解释闭包、this、原型链和事件循环的基本行为。</li><li>能正确处理并发、取消、错误和模块依赖。</li><li>能为数据结构选择合适操作并控制引用变化。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>实现一个支持并发限制、超时、取消、重试和部分成功的请求工具，并为关键函数编写测试。</p>
+                <ul class="article-list">
+                  <li>能解释任意回调中的变量值和 this 来源。</li><li>未处理的 Promise 拒绝不会静默消失。</li><li>模块之间没有隐式全局共享状态。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>把 async 函数理解为真正并行执行。</li><li>catch 后什么都不做或重复抛出失去上下文。</li><li>用深拷贝解决所有状态共享问题。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>架构师需要理解执行模型和错误边界。系统中真正的稳定性来自明确的状态生命周期、可取消的异步操作和可追踪的错误传播，而不是堆叠更多框架。</p>
+          </aside>
+        </div>
+      </article>
+    
+      <article class="chapter" data-chapter-id="browser-http">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 浏览器、DOM、事件与 HTTP 已掌握">
+            <input type="checkbox" data-chapter-check="browser-http">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="browser-http" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l2">L2</span>
+              <h3>浏览器、DOM、事件与 HTTP</h3>
+            </span>
+            <span class="chapter-subtitle">页面生命周期、事件系统、网络请求和存储</span>
+            <p class="chapter-summary">浏览器是前端应用的运行环境。理解解析、渲染、事件、网络和存储，才能解释页面真实的性能与交互行为。</p>
+            <span class="chapter-meta">
+              <span class="tag">浏览器</span><span class="tag">DOM</span><span class="tag">事件</span><span class="tag">HTTP</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>04</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>很多所谓框架问题其实是浏览器问题：为什么请求重复、为什么事件失效、为什么页面卡顿、为什么用户退出后数据还在。理解浏览器才能定位根因。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>DOM、事件和渲染管线</h4>
+        <p>DOM 是浏览器对文档的对象表示。JavaScript 修改 DOM 后，浏览器会重新计算样式、布局、绘制并合成，但并非每次修改都会同步完成所有工作。读取布局属性可能强制浏览器提前计算，形成布局抖动。</p><p>事件在捕获、目标、冒泡阶段传播。事件委托利用冒泡把多个子元素事件集中处理。异步事件中的状态可能已经变化，因此事件处理必须结合状态来源和清理逻辑。</p>
+        <ul class="article-bullets"><li>先批量更新 DOM，再统一读取布局信息。</li><li>事件监听器必须在组件销毁或页面切换时清理。</li><li>键盘事件和指针事件要共同设计。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>HTTP 请求和浏览器缓存</h4>
+        <p>浏览器通过 HTTP 方法、状态码、响应头和缓存策略与服务器交互。GET 通常用于读取，POST 用于创建，PUT/PATCH 用于更新，DELETE 用于删除。状态码表达请求结果，业务错误也应使用稳定的响应结构。</p><p>缓存由 Cache-Control、ETag、Last-Modified、Vary 等头共同决定。缓存能提升性能，但必须考虑用户身份、权限和实时性。前端私有数据不能与公共资源共享同一缓存键。</p>
+        <ul class="article-bullets"><li>区分网络失败、超时、权限失败和业务失败。</li><li>凭证、Cookie 和跨域策略必须在真实域名下验证。</li><li>缓存策略要同时考虑性能和数据新鲜度。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>浏览器存储与安全边界</h4>
+        <p>Cookie、localStorage、sessionStorage 和 IndexedDB 的容量、生命周期和安全模型不同。Cookie 会随请求发送，适合会话凭证但要考虑 CSRF；localStorage 简单但同步并且容易被 XSS 读取；IndexedDB 适合结构化离线数据但使用复杂。</p><p>前端存储不能作为安全边界。敏感数据应由服务端权限控制并尽量少存。任何来自 URL、存储、消息或第三方脚本的数据都必须被视为不可信输入。</p>
+        <ul class="article-bullets"><li>不要把长期敏感 Token 放在无保护的前端存储中。</li><li>跨标签页通信要验证消息来源。</li><li>离线数据需要版本、迁移和冲突策略。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能解释页面从 HTML 到可见内容的流程。</li><li>能设计可靠的事件、请求和错误状态。</li><li>能根据生命周期和安全需求选择浏览器存储。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>实现一个带取消、重试、缓存、离线状态、键盘操作和跨标签页同步的任务列表。</p>
+                <ul class="article-list">
+                  <li>重复请求和快速切换不会写入过期结果。</li><li>事件监听器和定时器没有泄漏。</li><li>权限变更后不会继续展示旧数据。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>认为 fetch 返回成功就一定业务成功。</li><li>把 localStorage 当作安全存储。</li><li>只监听 click 忽略键盘和触摸输入。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>架构师需要从浏览器边界思考数据流和安全。缓存、登录、权限、离线、跨标签同步和多端行为都需要明确契约，否则前后端各自实现一套后会产生难以定位的状态冲突。</p>
+          </aside>
+        </div>
+      </article>
+    
+      <article class="chapter" data-chapter-id="git-quality">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 Git、包管理与调试基础 已掌握">
+            <input type="checkbox" data-chapter-check="git-quality">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="git-quality" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l2">L2</span>
+              <h3>Git、包管理与调试基础</h3>
+            </span>
+            <span class="chapter-subtitle">版本控制、依赖边界、质量工具和问题定位</span>
+            <p class="chapter-summary">工程质量从可追溯的版本历史、可重现的依赖和可复现的问题定位开始。</p>
+            <span class="chapter-meta">
+              <span class="tag">Git</span><span class="tag">pnpm</span><span class="tag">调试</span><span class="tag">工程习惯</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>05</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>从个人项目进入团队协作后，工作区是否干净、依赖是否可重现、问题是否可复现，直接决定协作成本。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>Git 是协作时间线</h4>
+        <p>Git 的工作区、暂存区和提交区形成可审查的变更流程。提交应表达单一意图，提交正文说明背景、关键改动和验证结果。分支、合并和变基都只是组织历史的手段，不是目的。</p><p>出现冲突时要理解双方变更的业务意图，不能机械选择当前分支或传入分支。回滚也应优先使用可审计的反向提交，避免重写已经共享的历史。</p>
+        <ul class="article-bullets"><li>提交前阅读 diff，确认没有无关格式化和敏感信息。</li><li>一个提交只解决一个清晰问题。</li><li>不要把生成物、Secret 和本地配置提交进仓库。</li></ul>
+        <pre><code>git status
+git diff
+git add src/example.ts
+git diff --cached
+git commit -m "feat: 增加任务筛选"</code></pre>
+      </section>
+    
+      <section class="article-section">
+        <h4>包管理、依赖边界和可重现</h4>
+        <p>包管理器通过清单和锁文件记录直接依赖、间接依赖和版本解析结果。团队必须统一包管理器，根目录维护锁文件，子包不单独生成锁文件。依赖升级要评估破坏性变更、许可证和安全风险。</p><p>workspace 通过包边界共享代码。公共包只暴露必要入口，业务包不能依赖另一个包的内部文件。清晰的依赖方向能减少循环依赖和构建影响范围。</p>
+        <ul class="article-bullets"><li>生产依赖和开发依赖要明确区分。</li><li>锁文件必须进入版本控制并在 CI 使用。</li><li>共享包不能成为所有代码的垃圾桶。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>调试、格式和静态检查</h4>
+        <p>调试不是随机修改代码，而是先复现，再缩小范围，最后验证根因。浏览器 Network、Sources、Performance、Application 和 Node 调试器分别覆盖不同层的问题。日志要带关联 ID，错误要保留堆栈和上下文。</p><p>格式化、Lint 和类型检查负责机械质量，代码审查负责业务语义、权限、边界和可维护性。自动化工具越稳定，人工评审越能关注真正重要的设计问题。</p>
+        <ul class="article-bullets"><li>先构造最小复现，再修改实现。</li><li>本地和 CI 使用同一套检查规则。</li><li>不要通过关闭规则来掩盖设计问题。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能使用 Git 表达清晰、可审查的变更。</li><li>能维护统一的依赖图和锁文件。</li><li>能通过工具和日志系统性定位问题。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>建立一个带提交检查、格式、Lint、类型检查、基础测试和本地调试配置的最小项目。</p>
+                <ul class="article-list">
+                  <li>新环境能按文档重现安装和运行。</li><li>每次提交都能说明目的和验证方式。</li><li>常见错误能通过日志或复现步骤定位。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>用 commit --amend 修改已经被他人使用过的历史。</li><li>在不同目录混用 npm、yarn 和 pnpm。</li><li>格式化失败后随意扩大改动范围。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>架构师需要关注工程系统的可恢复性。版本、依赖、构建、检查、发布和回滚都应可追溯。没有这些基础，再好的架构也无法稳定演进。</p>
+          </aside>
+        </div>
+      </article>
+    
+        
+          <section class="stage-heading" id="stage-application">
+            <small>阶段 02</small>
+            <h2>前端应用与工程</h2>
+            <p>从会写页面走向会维护应用，掌握类型系统、Vue、React、状态、数据流、测试、构建和性能。 · 0/5 已掌握</p>
+          </section>
+          
+      <article class="chapter" data-chapter-id="typescript">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 TypeScript 类型系统 已掌握">
+            <input type="checkbox" data-chapter-check="typescript">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="typescript" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l2">L2</span>
+              <h3>TypeScript 类型系统</h3>
+            </span>
+            <span class="chapter-subtitle">用类型表达边界、状态和重构契约</span>
+            <p class="chapter-summary">TypeScript 在编译阶段描述代码契约，帮助开发者在重构和接口变化时快速发现影响范围。类型不是越多越好，而是把边界和状态表达得更明确。</p>
+            <span class="chapter-meta">
+              <span class="tag">TypeScript</span><span class="tag">类型设计</span><span class="tag">运行时校验</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>06</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>应用规模变大后，真正昂贵的不是写类型，而是误改接口、遗漏状态分支和无法判断数据是否可靠。类型系统能把这些风险提前暴露。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>推断、注解与对象建模</h4>
+        <p>TypeScript 会从初始化和上下文自动推断大部分类型，开发者只需要在公共边界、复杂逻辑和无法推断的位置补充注解。接口、类型别名和对象类型可以描述 API、组件 Props、领域实体和配置结构。</p><p>可选字段不等于字段一定存在。大量可选字段往往表示状态没有被正确建模。只读字段、精确字面量和判别字段可以把非法数据提前排除，让调用方在编码阶段就看到约束。</p>
+        <ul class="article-bullets"><li>优先让类型从实现和 Schema 推导。</li><li>公共 API 的输入输出应稳定且可读。</li><li>避免用 any 绕过问题，必要时用 unknown 后再收窄。</li></ul>
+        <pre><code>type TaskState =
+  | { status: "idle" }
+  | { status: "loading" }
+  | { status: "success"; data: Task[] }
+  | { status: "error"; message: string }
+
+function render(state: TaskState) {
+  if (state.status === "success") return state.data.length
+  if (state.status === "error") return state.message
+  return 0
+}</code></pre>
+      </section>
+    
+      <section class="article-section">
+        <h4>泛型、组合与重构</h4>
+        <p>泛型的价值是保留输入和输出之间的类型关系。工具函数、API 客户端、状态容器和事件总线都可能需要泛型，但泛型参数应由调用位置自然推断，而不是强迫调用方重复写类型。</p><p>类型组合可以从领域模型派生创建、更新、查询和展示类型。随着接口变化，编译器会指出所有受影响位置。高级条件类型和映射类型适合公共库和适配层，普通业务代码应以可读性为先。</p>
+        <ul class="article-bullets"><li>泛型参数必须有明确约束和真实复用价值。</li><li>从单一事实来源派生类型，减少重复声明。</li><li>类型报错应能定位到业务边界，而不是隐藏在复杂类型内部。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>类型边界与运行时校验</h4>
+        <p>TypeScript 类型在运行时不存在。网络响应、环境变量、URL 参数、数据库结果和第三方 SDK 都可能与声明不符。因此外部数据进入系统时必须做运行时校验，再由 Schema 推导静态类型。</p><p>类型系统不能替代业务校验。类型只回答结构是否可能合法，业务规则还需要判断权限、状态、范围和组合条件。前端校验用于体验，服务端校验才是最终约束。</p>
+        <ul class="article-bullets"><li>外部输入先在边界校验，再进入业务逻辑。</li><li>运行时 Schema 和静态类型尽量来自同一来源。</li><li>错误信息要能帮助调用方修正输入。</li></ul>
+        <pre><code>const TaskSchema = z.object({
+  id: z.string(),
+  title: z.string().min(1),
+  status: z.enum(["todo", "doing", "done"]),
+})
+
+type Task = z.infer&lt;typeof TaskSchema&gt;</code></pre>
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能用联合类型表达互斥状态并做穷尽检查。</li><li>能设计可读的泛型和组合类型。</li><li>能把运行时校验与静态类型连接起来。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>为一个 API 客户端和环境配置建立运行时 Schema，并从 Schema 推导 TypeScript 类型。</p>
+                <ul class="article-list">
+                  <li>外部数据未经校验不会进入业务逻辑。</li><li>状态分支能被编译器检查出遗漏。</li><li>调用公共工具时不需要重复书写类型参数。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>用 as 强制转换外部响应。</li><li>用大量可选字段掩盖状态设计问题。</li><li>为了炫技引入难以阅读的高级类型。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>类型系统是跨团队契约的一部分。架构师需要决定哪些边界使用代码生成、共享 Schema 和统一错误类型，从而让前端、Node 和服务端对同一业务概念保持一致理解。</p>
+          </aside>
+        </div>
+      </article>
+    
+      <article class="chapter" data-chapter-id="vue">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 Vue 应用开发 已掌握">
+            <input type="checkbox" data-chapter-check="vue">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="vue" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l2">L2</span>
+              <h3>Vue 应用开发</h3>
+            </span>
+            <span class="chapter-subtitle">响应式、组件、组合函数、路由和状态</span>
+            <p class="chapter-summary">Vue 通过响应式数据、模板和组件系统帮助开发者组织界面。掌握它需要理解数据依赖、组件边界和应用状态，而不是只会写指令。</p>
+            <span class="chapter-meta">
+              <span class="tag">Vue</span><span class="tag">Composition API</span><span class="tag">Pinia</span><span class="tag">Router</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>07</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>Vue 容易上手，但大型项目的问题通常不是指令不会用，而是状态归属不清、组件职责混乱、请求和路由状态不可恢复。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>响应式与组件数据流</h4>
+        <p>Vue 会跟踪响应式数据在渲染和计算过程中的读取，并在数据变化时触发相关更新。ref 适合基础值和需要整体替换的对象，reactive 适合嵌套对象，但解构和替换会破坏响应关系。</p><p>组件通过 Props 接收数据、通过 Emits 通知父组件、通过 Slots 接收结构扩展。单向数据流让数据来源明确，也便于调试。父组件提供的对象不能在子组件中被随意原地修改。</p>
+        <ul class="article-bullets"><li>派生值优先使用 computed，不要在模板中重复计算。</li><li>组件通信方式要与组件关系匹配。</li><li>状态更新来源越集中，越容易追踪。</li></ul>
+        <pre><code>&lt;script setup lang="ts"&gt;
+const props = defineProps&lt;{ count: number }&gt;()
+const emit = defineEmits&lt;{ change: [value: number] }&gt;()
+&lt;/script&gt;
+
+&lt;template&gt;
+  &lt;button type="button" @click="emit('change', props.count + 1)"&gt;
+    {{ count }}
+  &lt;/button&gt;
+&lt;/template&gt;</code></pre>
+      </section>
+    
+      <section class="article-section">
+        <h4>组合函数与状态边界</h4>
+        <p>Composition API 的价值是把数据获取、分页、权限、表单和副作用组织成可测试的组合函数。组合函数应有清晰的输入输出，并在组件卸载时清理订阅、定时器和请求。</p><p>Pinia 适合跨页面共享的用户、权限、项目上下文和通知，不应把所有局部状态都塞进 store。URL 适合筛选、分页和详情标识，组件局部状态适合弹窗、输入草稿和临时选择。</p>
+        <ul class="article-bullets"><li>先判断状态属于组件、URL 还是全局。</li><li>服务端数据需要缓存和失效策略，不能简单复制到 store。</li><li>组合函数只暴露调用方真正需要的能力。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>路由、请求和错误状态</h4>
+        <p>路由负责页面组织、权限守卫和 URL 状态。动态路由、查询参数、嵌套路由和懒加载共同影响页面恢复、刷新和权限行为。路由守卫应处理身份和访问控制，但服务端仍然必须再次授权。</p><p>请求状态需要统一管理加载、成功、空、错误和取消。组件不应在多个生命周期中各自发起重复请求。表单提交要有校验、防重、服务端错误回显和成功后的状态同步。</p>
+        <ul class="article-bullets"><li>关键页面状态应能通过 URL 恢复。</li><li>请求取消要传到真实数据源。</li><li>错误提示要区分网络、权限、校验和未知错误。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能解释响应式依赖和组件数据流。</li><li>能拆分可复用组合函数并管理服务端状态。</li><li>能设计可恢复的路由和请求错误状态。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>实现一个包含列表、筛选、分页、详情、编辑、权限路由和错误恢复的 Vue 后台模块。</p>
+                <ul class="article-list">
+                  <li>刷新页面后筛选和分页状态仍能恢复。</li><li>快速切换页面不会写入过期请求结果。</li><li>核心逻辑通过组合函数或独立模块测试。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>用事件总线处理所有跨组件通信。</li><li>把所有数据都放进 Pinia。</li><li>依赖前端路由守卫代替服务端授权。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>框架选择不是架构终点。架构师需要定义前后端契约、错误模型、数据缓存策略和权限边界，让 Vue 只负责稳定消费这些能力。</p>
+          </aside>
+        </div>
+      </article>
+    
+      <article class="chapter" data-chapter-id="react">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 React 应用开发 已掌握">
+            <input type="checkbox" data-chapter-check="react">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="react" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l2">L2</span>
+              <h3>React 应用开发</h3>
+            </span>
+            <span class="chapter-subtitle">组件、Hooks、状态架构和服务端边界</span>
+            <p class="chapter-summary">React 用状态生成 UI。掌握它需要理解状态归属、Hooks 执行模型、服务端状态与客户端状态的差异，以及大型应用的模块边界。</p>
+            <span class="chapter-meta">
+              <span class="tag">React</span><span class="tag">Hooks</span><span class="tag">服务端状态</span><span class="tag">Next.js</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>08</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>React 的自由度很高，小项目可以快速迭代，大项目如果没有状态和数据边界，很容易形成难以追踪的重渲染、重复请求和循环依赖。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>状态、派生值和渲染</h4>
+        <p>React 组件在状态或 props 变化时重新执行并生成新的元素树。可计算的数据应作为派生值，而不是重复放入 state。动态列表需要稳定 key，否则组件身份会错误复用。</p><p>状态应尽量靠近使用位置。只有当多个组件需要同步读取和更新时才提升状态或引入共享状态。全局状态越多，组件复用和测试越困难。</p>
+        <ul class="article-bullets"><li>能推导出的值不要重复存 state。</li><li>状态更新要基于前一个状态时使用函数式更新。</li><li>组件身份应由业务 ID 而不是数组索引决定。</li></ul>
+        <pre><code>function Counter() {
+  const [count, setCount] = useState(0)
+  const doubled = count * 2
+
+  return (
+    &lt;button onClick={() =&gt; setCount((value) =&gt; value + 1)}&gt;
+      {count} / {doubled}
+    &lt;/button&gt;
+  )
+}</code></pre>
+      </section>
+    
+      <section class="article-section">
+        <h4>Hooks 与副作用边界</h4>
+        <p>Hook 只能在组件或自定义 Hook 顶层调用，因为 React 依赖调用顺序匹配状态。useEffect 用于同步外部系统，如订阅、计时器和 DOM API。数据请求通常更适合服务端状态库，而不是在每个页面手写 useEffect。</p><p>每个副作用都要设计清理逻辑。依赖数组不是装饰，它描述副作用读取了哪些外部值。忽略依赖会造成闭包旧值，依赖过多可能表示逻辑没有拆开。</p>
+        <ul class="article-bullets"><li>副作用必须成对设计注册和清理。</li><li>不要为了“只执行一次”而忽略真实依赖。</li><li>自定义 Hook 要有明确单一职责。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>服务端状态与大型应用架构</h4>
+        <p>服务端数据与客户端 UI 状态生命周期不同。服务端状态需要缓存、失效、重试、预取和并发控制，客户端状态关注弹窗、输入、布局和选择。把它们混在一起会导致重复请求和状态冲突。</p><p>大型 React 应用应按业务能力组织模块，而不是只按组件、Hook、服务和工具类型分目录。模块只暴露公共入口，依赖方向稳定，跨模块能力通过明确接口传递。</p>
+        <ul class="article-bullets"><li>请求缓存使用稳定的 query key。</li><li>缓存失效策略要基于业务写入行为。</li><li>模块边界优先于文件夹命名形式。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能区分客户端状态和服务端状态。</li><li>能正确使用 Hooks 并设计清理逻辑。</li><li>能按业务模块组织大型 React 应用。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>实现一个带权限、列表缓存、详情预取、表单编辑、错误边界和性能分析的 React 后台模块。</p>
+                <ul class="article-list">
+                  <li>切换路由不会重复请求已有数据。</li><li>副作用的注册和清理行为可测试。</li><li>模块之间不存在隐式全局依赖和循环引用。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>把 useEffect 当作所有逻辑的入口。</li><li>无脑 memo 所有组件。</li><li>全局 Context 频繁更新导致整棵组件树重渲染。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>React 生态会不断变化，但状态归属、缓存一致性和模块边界是稳定问题。架构师应制定这些规则，而不是追逐每一个新 Hook 或新框架 API。</p>
+          </aside>
+        </div>
+      </article>
+    
+      <article class="chapter" data-chapter-id="frontend-data-flow">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 前端路由、状态与数据流 已掌握">
+            <input type="checkbox" data-chapter-check="frontend-data-flow">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="frontend-data-flow" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l3">L3</span>
+              <h3>前端路由、状态与数据流</h3>
+            </span>
+            <span class="chapter-subtitle">URL、缓存、权限、表单和跨页面状态</span>
+            <p class="chapter-summary">前端应用的状态不只是全局变量。URL、服务端缓存、表单草稿、权限和 UI 状态各自有生命周期和一致性要求。</p>
+            <span class="chapter-meta">
+              <span class="tag">路由</span><span class="tag">状态管理</span><span class="tag">缓存</span><span class="tag">表单</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>09</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>前端应用的复杂度主要来自状态生命周期。状态归属、缓存和权限一旦混乱，页面会表现为随机旧数据、重复请求和操作不可预测。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>先决定状态归属</h4>
+        <p>筛选、分页、排序和详情 ID 应该进入 URL，因为用户需要刷新恢复、分享和前进后退。弹窗、拖拽、临时选中适合组件局部状态。用户、权限和跨页面通知适合全局状态。服务端数据应由专门的数据层管理。</p><p>状态归属错误会产生同步问题。例如把分页同时放在 URL、store 和组件中，任何一处更新都需要手动同步其他两处。正确做法是选择一个权威来源，其他位置只读取或派生。</p>
+        <ul class="article-bullets"><li>刷新后必须恢复的状态优先放 URL。</li><li>服务端数据不复制成多个长期状态副本。</li><li>一个概念只设置一个权威来源。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>缓存、请求和一致性</h4>
+        <p>服务端缓存需要稳定缓存键，键应包含用户、租户、资源和筛选条件。写入成功后要主动失效或更新相关缓存。乐观更新适合低风险操作，但失败时必须回滚并提示用户。</p><p>并发请求要处理竞态：旧请求可能比新请求更晚返回。取消请求、版本号或请求标识都能避免旧结果覆盖新状态。</p>
+        <ul class="article-bullets"><li>缓存键必须表达数据身份。</li><li>写操作成功后明确要失效哪些查询。</li><li>快速筛选和切换页面要防止旧响应覆盖新响应。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>表单与权限状态</h4>
+        <p>表单需要初始值、草稿、校验、提交中、服务端错误、成功和重置状态。复杂表单应把字段规则、依赖关系和跨字段校验集中管理，避免散落在模板中。</p><p>权限状态来源必须可追踪。前端根据权限隐藏或禁用操作只是体验优化，服务端仍需再次授权。权限变化后，前端缓存和路由也需要更新，避免展示已经不可访问的数据。</p>
+        <ul class="article-bullets"><li>服务端字段错误要映射到具体控件。</li><li>提交中要防重，并允许用户理解当前进度。</li><li>权限变化应触发缓存和路由重新校验。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能根据生命周期选择 URL、局部、全局或服务端状态。</li><li>能设计缓存键、失效和并发处理。</li><li>能处理复杂表单和权限变化。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>实现一个可分享筛选、支持缓存和详情预取、包含复杂表单和权限变化的后台模块。</p>
+                <ul class="article-list">
+                  <li>刷新、后退和分享链接都能恢复正确状态。</li><li>写入后相关页面不会显示旧数据。</li><li>权限变化后不可访问数据会被清除。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>把所有状态都放进全局 store。</li><li>在多个位置维护同一份分页状态。</li><li>写入成功却不失效相关缓存。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>架构师需要统一前端的数据契约和缓存模型。哪些数据可缓存、缓存多久、写入后如何失效、权限变化如何清理，都应由跨团队规则决定。</p>
+          </aside>
+        </div>
+      </article>
+    
+      <article class="chapter" data-chapter-id="frontend-engineering">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 前端工程化、测试与性能 已掌握">
+            <input type="checkbox" data-chapter-check="frontend-engineering">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="frontend-engineering" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l3">L3</span>
+              <h3>前端工程化、测试与性能</h3>
+            </span>
+            <span class="chapter-subtitle">构建、质量门禁、测试策略、性能和无障碍</span>
+            <p class="chapter-summary">从能运行的单页应用走向可持续交付的前端系统，需要构建、测试、质量门禁、性能预算和无障碍规范。</p>
+            <span class="chapter-meta">
+              <span class="tag">Vite</span><span class="tag">测试</span><span class="tag">性能</span><span class="tag">无障碍</span><span class="tag">CI</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>10</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>前端进入多人协作和生产发布后，最大的成本不是写组件，而是回归、构建失败、性能退化和跨端不一致。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>构建与交付</h4>
+        <p>开发服务器负责快速反馈，生产构建负责转译、打包、压缩、代码分割和资源指纹。开发和生产行为不同，必须在接近生产的环境中验证。构建产物要能分析体积、依赖和加载路径。</p><p>按路由和大型组件拆包，延迟加载非关键功能。第三方依赖要检查是否有浏览器兼容性和体积成本。环境变量只能提供构建时配置，敏感配置必须留在服务端。</p>
+        <ul class="article-bullets"><li>首屏只加载必要代码和数据。</li><li>构建产物可重复且能追踪版本。</li><li>浏览器专用和服务端专用代码不能互相污染。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>测试金字塔与质量门禁</h4>
+        <p>单元测试验证纯逻辑，组件测试验证交互和状态，集成测试验证模块协作，端到端测试覆盖关键用户流程。测试应覆盖风险和业务规则，而不是追求形式覆盖率。</p><p>质量门禁包括格式、Lint、类型、测试和构建。它们在 Pull Request 和主分支持续执行。失败时先修复根因，不通过关闭规则绕过。</p>
+        <ul class="article-bullets"><li>测试名描述用户或系统行为。</li><li>测试数据独立且可重复。</li><li>关键权限和错误路径必须有测试。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>性能和无障碍作为质量属性</h4>
+        <p>性能关注加载、渲染、交互和网络。先用浏览器性能工具测量，再优化真实瓶颈。常见手段包括减少阻塞资源、控制包体积、虚拟列表、缓存、图片优化和减少布局抖动。</p><p>无障碍需要语义、键盘、焦点、对比度和动态内容通知。性能优化不能牺牲可访问性，例如删除焦点样式或把内容渲染到不可访问的 canvas 中。</p>
+        <ul class="article-bullets"><li>为关键页面建立性能预算。</li><li>键盘和屏幕阅读器流程纳入验收。</li><li>优化前后保留数据和证据。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能设计构建、测试和质量门禁。</li><li>能使用真实数据定位前端性能问题。</li><li>能把无障碍和性能纳入交付标准。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>为一个中型前端项目配置 CI、测试层次、产物分析和性能预算，并完成一次无障碍审查。</p>
+                <ul class="article-list">
+                  <li>主分支始终可构建并可通过质量门禁。</li><li>关键页面有性能基线和回归证据。</li><li>主要流程只用键盘即可完成。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>只跑端到端测试覆盖所有分支。</li><li>依赖本地感觉判断性能。</li><li>把无障碍留到上线前补做。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>架构师需要把质量属性变成自动化和可度量的标准。构建、测试、性能和可访问性不是个人技巧，而是团队交付能力的一部分。</p>
+          </aside>
+        </div>
+      </article>
+    
+        
+          <section class="stage-heading" id="stage-backend">
+            <small>阶段 03</small>
+            <h2>服务端与数据</h2>
+            <p>进入 Node、HTTP、接口、认证授权、SQL、事务、索引、缓存、队列和可观测性，打通完整业务链路。 · 0/7 已掌握</p>
+          </section>
+          
+      <article class="chapter" data-chapter-id="node-runtime">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 Node.js 运行时与服务端基础 已掌握">
+            <input type="checkbox" data-chapter-check="node-runtime">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="node-runtime" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l2">L2</span>
+              <h3>Node.js 运行时与服务端基础</h3>
+            </span>
+            <span class="chapter-subtitle">事件循环、模块、HTTP、进程、流和优雅停机</span>
+            <p class="chapter-summary">Node 使用事件循环和异步 I/O 处理大量连接。理解运行时、模块、进程和资源生命周期，才能写出可维护、可部署的服务。</p>
+            <span class="chapter-meta">
+              <span class="tag">Node.js</span><span class="tag">事件循环</span><span class="tag">Stream</span><span class="tag">进程</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>11</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>从浏览器进入服务端后，代码不再只服务一个用户。并发、资源、进程生命周期和外部依赖可靠性会直接决定系统稳定性。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>事件循环和异步 I/O</h4>
+        <p>Node 主线程执行 JavaScript，文件、网络和 DNS 等 I/O 由底层线程池或操作系统异步完成。回调、Promise 微任务和不同事件循环阶段决定任务何时执行。CPU 密集的同步代码会阻塞所有请求。</p><p>并发并不等于多线程执行 JavaScript。Node 通过非阻塞 I/O 和事件循环提高资源利用率。需要 CPU 密集处理时，应拆分任务、使用 Worker Threads 或独立服务。</p>
+        <ul class="article-bullets"><li>避免在请求路径执行长同步循环和大规模 JSON 处理。</li><li>Promise 拒绝必须有明确处理位置。</li><li>并发上限要为数据库和下游服务留出余量。</li></ul>
+        <pre><code>const results = await Promise.all(
+  ids.map((id) =&gt;
+    Promise.race([
+      fetchTask(id),
+      new Promise((_, reject) =&gt;
+        setTimeout(() =&gt; reject(new Error("timeout")), 3000),
+      ),
+    ]),
+  ),
+)</code></pre>
+      </section>
+    
+      <section class="article-section">
+        <h4>模块、HTTP Server 和流</h4>
+        <p>Node 支持 CommonJS 和 ESM，模块解析受 package.json、exports 和文件扩展名影响。服务入口通常创建 HTTP Server，再由 Express、Fastify 或 NestJS 接管请求。框架之外仍需理解端口、连接、请求超时和响应关闭。</p><p>Stream 适合处理大文件、日志、上传、下载和实时响应。流必须处理背压：生产速度快于消费速度时，要等待 drain 或使用 pipe。客户端断开后要停止后续写入并释放资源。</p>
+        <ul class="article-bullets"><li>公共包通过 exports 暴露稳定入口。</li><li>大文件不能全部读入内存。</li><li>流、数据库连接和子进程都需要显式释放。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>环境、进程和优雅停机</h4>
+        <p>配置应在启动阶段校验，缺失或非法时立即退出，避免服务半可用。Secret 通过环境、Secret Manager 或挂载文件提供，不进入仓库和日志。</p><p>收到 SIGTERM 或 SIGINT 后，服务应先停止接收新请求，等待在途请求完成，关闭数据库和队列连接，再退出。超过超时时间仍未完成时可以强制退出，但必须保留审计。</p>
+        <ul class="article-bullets"><li>启动失败比运行时随机失败更容易定位。</li><li>停机过程要区分请求、任务和后台连接。</li><li>进程退出码要反映成功或失败。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能解释阻塞、并发、事件循环和资源释放。</li><li>能组织模块、HTTP 服务和流式处理。</li><li>能实现配置校验和优雅停机。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>实现一个支持 JSON API、文件流下载、结构化日志、配置校验和优雅停机的 Node 服务。</p>
+                <ul class="article-list">
+                  <li>长耗时 CPU 任务不会阻塞健康检查。</li><li>客户端断开后文件流和数据库连接被释放。</li><li>收到 SIGTERM 后不再接收新请求并安全退出。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>收到信号立即 process.exit，丢掉在途写入。</li><li>把大文件全部读入内存。</li><li>使用无上限并发请求数据库。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>架构师需要理解服务的运行边界：单实例能承受多少连接、哪些任务应异步、哪些状态不能放进程内存、发布时如何安全替换实例。</p>
+          </aside>
+        </div>
+      </article>
+    
+      <article class="chapter" data-chapter-id="http-api">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 HTTP API 与接口契约 已掌握">
+            <input type="checkbox" data-chapter-check="http-api">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="http-api" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l2">L2</span>
+              <h3>HTTP API 与接口契约</h3>
+            </span>
+            <span class="chapter-subtitle">REST、校验、分页、错误码、版本和契约测试</span>
+            <p class="chapter-summary">接口是前后端、服务和第三方之间的稳定边界。契约需要明确请求、响应、错误、权限、分页和幂等行为。</p>
+            <span class="chapter-meta">
+              <span class="tag">HTTP</span><span class="tag">REST</span><span class="tag">OpenAPI</span><span class="tag">API 契约</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>12</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>前端应用的稳定性很大程度取决于接口质量。契约不清会导致前后端反复猜测，错误模型混乱会让用户无法理解失败原因。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>HTTP 语义和资源设计</h4>
+        <p>HTTP 方法表达操作意图，状态码表达请求结果。GET 用于读取且应可缓存，POST 用于创建，PUT/PATCH 用于更新，DELETE 用于删除。业务错误不应统一返回 200，否则客户端和网关无法正确判断。</p><p>资源路径表达业务实体，查询参数表达筛选、排序和分页。响应结构统一包含数据、错误和可追踪信息。字段命名、日期格式、空值语义和错误码必须跨服务一致。</p>
+        <ul class="article-bullets"><li>状态码语义准确。</li><li>错误结构稳定且带业务错误码。</li><li>分页、排序和筛选规则统一。</li></ul>
+        <pre><code>{
+  "code": "TASK_NOT_FOUND",
+  "message": "任务不存在",
+  "requestId": "01J...",
+  "details": []
+}</code></pre>
+      </section>
+    
+      <section class="article-section">
+        <h4>参数校验和错误模型</h4>
+        <p>路径参数、查询参数、请求体、文件元数据和外部响应都要校验。校验分为结构校验、业务校验和权限校验。结构校验可以在 Controller 边界完成，业务规则放到 Service，资源权限必须有最终服务端检查。</p><p>错误应区分客户端可修复、权限问题、资源冲突、上游失败和内部异常。验证错误返回字段级信息；未知异常只记录内部堆栈，对客户端返回稳定错误码和 requestId。</p>
+        <ul class="article-bullets"><li>错误码是接口契约，不随意改名。</li><li>不要在错误响应泄露 SQL、堆栈和内部路径。</li><li>校验失败要给出可操作的字段信息。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>版本、幂等和契约测试</h4>
+        <p>接口变更应优先向后兼容。新增可选字段风险较低，删除字段、改变含义和改变状态码需要版本策略。客户端和服务端应基于 OpenAPI 或共享 Schema 验证契约。</p><p>网络超时不能证明写操作没有成功。创建任务、支付、发送通知等操作需要幂等键，重复请求返回同一业务结果。契约测试验证双方是否仍按约定理解和返回数据。</p>
+        <ul class="article-bullets"><li>写操作明确幂等策略。</li><li>接口文档从代码或 Schema 生成。</li><li>破坏性变更提供迁移窗口。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能设计资源、状态码、分页和错误响应。</li><li>能分层处理结构、业务和权限校验。</li><li>能为写操作设计幂等和兼容演进。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>为一个任务平台设计完整 API 契约，并使用 Schema 生成类型、校验请求和编写契约测试。</p>
+                <ul class="article-list">
+                  <li>所有错误都有稳定错误码和 requestId。</li><li>重复提交同一幂等键不会产生重复业务结果。</li><li>客户端可以从契约生成类型而不是手写猜测。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>所有错误都返回 200 和一段字符串。</li><li>把数据库行结构直接暴露为 API。</li><li>无版本策略随意删除字段。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>架构师要维护跨团队契约。接口不只是函数调用，它连接前端、Node、数据库、测试、文档和外部系统，任何变更都要考虑依赖影响。</p>
+          </aside>
+        </div>
+      </article>
+    
+      <article class="chapter" data-chapter-id="auth-security">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 认证、授权与服务端安全 已掌握">
+            <input type="checkbox" data-chapter-check="auth-security">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="auth-security" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l3">L3</span>
+              <h3>认证、授权与服务端安全</h3>
+            </span>
+            <span class="chapter-subtitle">身份、Token、Session、RBAC、资源权限和审计</span>
+            <p class="chapter-summary">认证确认用户是谁，授权决定用户能做什么。Agent、接口和服务都必须继承真实用户的权限边界。</p>
+            <span class="chapter-meta">
+              <span class="tag">Auth</span><span class="tag">RBAC</span><span class="tag">JWT</span><span class="tag">安全审计</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>13</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>权限漏洞的代价远高于普通功能缺陷。Agent、自动化和后台任务都需要明确身份和授权边界，不能因为“内部系统”就降低安全要求。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>认证机制和 Token 生命周期</h4>
+        <p>Session 适合由服务端保存会话状态，JWT 适合无状态校验但撤销更复杂。OAuth2 关注授权委托。Token 通常有访问令牌、刷新令牌、过期时间和撤销机制，必须安全存储和传输。</p><p>前端不应把长期 Token 放入容易受到 XSS 攻击的位置。服务端不能记录完整 Token、密码或密钥。刷新失败、退出登录和权限变化都要清理本地缓存。</p>
+        <ul class="article-bullets"><li>访问 Token 短期、刷新 Token 长期并限制使用。</li><li>Token 不进入日志、URL 和 Prompt。</li><li>退出登录需要服务端撤销或版本失效。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>RBAC、ABAC 与资源归属</h4>
+        <p>RBAC 按角色授予能力，ABAC 结合用户、资源、环境和动作属性判断。真实系统通常组合使用：角色决定基础权限，资源归属和状态决定是否允许当前动作。</p><p>项目负责人、项目成员、任务负责人和访客可能拥有不同操作。权限校验必须发生在服务端资源层，不能仅依赖前端隐藏按钮。</p>
+        <ul class="article-bullets"><li>权限规则集中、可测试、可审计。</li><li>资源 ID 不能作为访问权限证明。</li><li>删除、导出和批量操作是高风险权限。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>审计、敏感数据和最小权限</h4>
+        <p>认证和授权失败必须记录关键上下文，但不能记录敏感值。高风险操作需要记录操作人、时间、资源、动作、结果和追踪 ID。日志应脱敏并设置保留期限。</p><p>服务账号和后台任务也遵循最小权限。跨租户读取、临时调试权限和导出能力需要额外审批和过期机制。</p>
+        <ul class="article-bullets"><li>默认拒绝，按需授予。</li><li>权限拒绝返回稳定错误码。</li><li>审计记录用于追溯而不是收集更多个人信息。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能区分认证、授权和资源归属。</li><li>能设计 Token 生命周期和权限矩阵。</li><li>能完成高风险操作审计。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>实现一个多项目系统，覆盖登录、刷新、退出、OWNER/MEMBER 角色、资源权限和审计日志。</p>
+                <ul class="article-list">
+                  <li>伪造资源 ID 无法越权访问。</li><li>权限变化后旧 Token 和缓存不能继续访问。</li><li>高风险操作有完整且脱敏的审计记录。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>前端隐藏按钮就等于授权。</li><li>使用管理员服务账号代表所有用户。</li><li>Token、密码和密钥进入日志。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>架构师要把权限从单个接口提升为统一模型。身份、角色、资源、动作和审计需要跨服务一致，否则系统越大越容易出现无法追踪的权限缺口。</p>
+          </aside>
+        </div>
+      </article>
+    
+      <article class="chapter" data-chapter-id="database-model-sql">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 关系建模与 SQL 已掌握">
+            <input type="checkbox" data-chapter-check="database-model-sql">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="database-model-sql" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l3">L3</span>
+              <h3>关系建模与 SQL</h3>
+            </span>
+            <span class="chapter-subtitle">实体、约束、JOIN、聚合、索引和执行计划</span>
+            <p class="chapter-summary">数据库把业务事实持久化。表结构、约束和查询方式决定数据一致性、性能和后续演进成本。</p>
+            <span class="chapter-meta">
+              <span class="tag">PostgreSQL</span><span class="tag">SQL</span><span class="tag">关系建模</span><span class="tag">索引</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>14</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>只要系统有业务状态，就会面对数据模型和查询问题。前端开发者进入全栈后，不能把数据库当作一个简单的 JSON 仓库。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>实体、关系和约束</h4>
+        <p>关系模型用表表达实体，用主键唯一标识记录，用外键表达引用。一对多、多对多和自关联要根据业务语义建模。规范化减少重复和更新异常，反规范化则用于明确性能取舍。</p><p>数据库约束是数据真实性的最后防线。唯一约束防止重复成员，外键维护引用完整性，非空和检查约束限制合法状态。删除规则必须根据业务决定限制、级联还是软删除。</p>
+        <ul class="article-bullets"><li>业务实体的唯一性交给数据库约束。</li><li>删除策略要结合审计和恢复要求。</li><li>不要用一张大表承载所有业务概念。</li></ul>
+        <pre><code>CREATE TABLE project_member (
+  project_id uuid NOT NULL REFERENCES project(id),
+  user_id uuid NOT NULL REFERENCES app_user(id),
+  role text NOT NULL CHECK (role IN ('OWNER', 'MEMBER')),
+  PRIMARY KEY (project_id, user_id)
+);</code></pre>
+      </section>
+    
+      <section class="article-section">
+        <h4>SQL 查询、JOIN 和聚合</h4>
+        <p>SELECT 负责投影，WHERE 在分组前过滤，GROUP BY 聚合，HAVING 在分组后过滤，ORDER BY 决定顺序，LIMIT/OFFSET 或游标负责分页。JOIN 会改变行数，必须理解连接条件和一对多关系。</p><p>窗口函数适合排名、分组内比较和最近记录。复杂报表不应全部拉到应用层处理，但也要避免一条 SQL 过度复杂无法维护。查询应返回业务真正需要的字段。</p>
+        <ul class="article-bullets"><li>分页排序字段要唯一，避免重复和漂移。</li><li>区分 WHERE 和 HAVING。</li><li>长查询要有执行计划和性能证据。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>索引、事务和迁移</h4>
+        <p>索引通过额外存储加速查询。联合索引遵循最左匹配，选择性、排序和回表决定效果。索引不是越多越好，写入成本、存储和统计信息都会受影响。EXPLAIN ANALYZE 能展示真实执行过程。</p><p>事务用开始、提交和回滚保证一组操作原子性。隔离级别决定并发读写看到什么数据，锁和唯一约束处理竞争。迁移必须与代码发布顺序兼容，避免旧代码遇到新结构立即失败。</p>
+        <ul class="article-bullets"><li>索引围绕真实慢查询建立。</li><li>事务中避免慢网络调用。</li><li>大表迁移考虑锁、回填和回滚。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能把业务实体转换成关系模型和约束。</li><li>能编写 JOIN、聚合和窗口查询。</li><li>能使用执行计划判断索引和事务效果。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>为项目、任务、成员和审计设计数据库结构，并实现统计查询、分页查询和并发事务测试。</p>
+                <ul class="article-list">
+                  <li>约束能阻止非法业务状态。</li><li>关键查询使用合理索引并有执行计划。</li><li>迁移能在新旧代码兼容窗口内执行。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>只用应用层保证唯一性。</li><li>在循环中对数据库发起 N+1 查询。</li><li>为了性能随意冗余数据却没有同步策略。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>数据模型是最难回滚的架构决策。架构师需要关注数据所有权、一致性、访问模式、容量和迁移路径，而不是只关注当前 SQL 能不能运行。</p>
+          </aside>
+        </div>
+      </article>
+    
+      <article class="chapter" data-chapter-id="transactions-indexes">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 事务、索引与查询优化 已掌握">
+            <input type="checkbox" data-chapter-check="transactions-indexes">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="transactions-indexes" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l3">L3</span>
+              <h3>事务、索引与查询优化</h3>
+            </span>
+            <span class="chapter-subtitle">一致性、并发、锁、慢查询和容量</span>
+            <p class="chapter-summary">事务解决并发写入的一致性，索引解决查询性能。两者都需要结合业务风险和真实负载设计。</p>
+            <span class="chapter-meta">
+              <span class="tag">事务</span><span class="tag">隔离级别</span><span class="tag">索引</span><span class="tag">性能</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>15</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>当用户在并发操作中看到丢失更新、重复数据或长时间等待时，问题通常已经超出语法层面，进入事务和容量设计。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>ACID、隔离级别和并发异常</h4>
+        <p>ACID 分别指原子性、一致性、隔离性和持久性。不同隔离级别允许不同并发现象，例如脏读、不可重复读和幻读。实际选择要在正确性和并发性能之间取舍。</p><p>并发更新需要乐观锁或悲观锁。版本字段、条件更新和唯一约束都能避免覆盖。事务边界应包含必须一起成功或失败的操作，但不应该包住慢外部调用。</p>
+        <ul class="article-bullets"><li>先说明业务一致性要求，再选择隔离和锁策略。</li><li>用唯一约束处理并发重复创建。</li><li>事务失败要能区分重试和不可恢复错误。</li></ul>
+        <pre><code>UPDATE task
+SET status = 'DONE', version = version + 1
+WHERE id = $1
+  AND version = $2
+  AND status = 'DOING'
+RETURNING *;</code></pre>
+      </section>
+    
+      <section class="article-section">
+        <h4>查询性能和执行计划</h4>
+        <p>慢查询可能来自缺少索引、返回字段过多、连接行数爆炸、排序、函数导致索引失效或统计信息过期。EXPLAIN ANALYZE 能显示扫描方式、预估行数、实际行数、循环次数和耗时。</p><p>优化顺序通常是减少数据量、改善访问路径、增加或调整索引、减少重复查询、缓存稳定结果。缓存不能替代错误数据模型，它只在正确查询基础上降低热点压力。</p>
+        <ul class="article-bullets"><li>先找真正慢的查询，再改索引。</li><li>关注实际行数与预估行数偏差。</li><li>写入性能和查询性能需要一起评估。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>容量、分区和归档</h4>
+        <p>数据量增长后，索引维护、备份恢复和查询扫描都会变贵。分区、归档、冷热分离和批量任务需要提前规划。大表删除和更新应分批执行，控制锁和复制延迟。</p><p>性能目标要结合业务 SLO。架构师需要知道峰值 QPS、数据增长、读写比例、延迟预算和恢复目标，才能决定扩容、分区和缓存策略。</p>
+        <ul class="article-bullets"><li>按时间和业务维度规划数据生命周期。</li><li>批量变更分批提交并监控延迟。</li><li>容量指标纳入日常监控。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能解释隔离级别和并发异常。</li><li>能根据执行计划优化慢查询。</li><li>能规划数据增长和归档策略。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>针对一个任务列表制造慢查询和并发更新问题，使用执行计划、索引和条件更新完成优化。</p>
+                <ul class="article-list">
+                  <li>并发更新不会覆盖他人数据。</li><li>关键查询 P95 延迟达到目标。</li><li>表增长和数据归档有可执行策略。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>为了并发随意使用最高隔离级别。</li><li>给所有字段加索引。</li><li>缓存慢查询却不修正数据模型。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>事务和性能是架构取舍的核心。架构师需要把一致性要求、延迟预算、容量增长和恢复目标转换成数据库与缓存策略。</p>
+          </aside>
+        </div>
+      </article>
+    
+      <article class="chapter" data-chapter-id="cache-consistency">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 缓存、Redis 与一致性 已掌握">
+            <input type="checkbox" data-chapter-check="cache-consistency">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="cache-consistency" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l3">L3</span>
+              <h3>缓存、Redis 与一致性</h3>
+            </span>
+            <span class="chapter-subtitle">缓存模式、失效、分布式锁、NoSQL 和最终一致性</span>
+            <p class="chapter-summary">缓存用于降低延迟和负载，但会引入数据新鲜度、一致性和故障降级问题。认识到什么时候不该缓存比会写缓存更重要。</p>
+            <span class="chapter-meta">
+              <span class="tag">Redis</span><span class="tag">缓存</span><span class="tag">NoSQL</span><span class="tag">一致性</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>16</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>缓存是性能工具，也是复杂来源。没有一致性策略的缓存会制造旧数据、权限泄漏和难以复现的生产问题。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>缓存模式与失效</h4>
+        <p>常见策略包括 Cache-Aside、Write-Through、Write-Behind 和读写缓存。缓存键必须包含租户、用户、资源、筛选条件、版本和语言等影响结果的变量。TTL 控制最大陈旧时间，主动失效处理业务写入。</p><p>缓存穿透是查询不存在的数据，缓存击穿是热点键失效，缓存雪崩是大量键同时过期。可以使用空值短缓存、互斥重建、随机 TTL 和热点预热缓解。</p>
+        <ul class="article-bullets"><li>缓存键不完整会导致跨用户、跨租户数据泄漏。</li><li>缓存命中率必须和正确性一起观测。</li><li>写入后明确删除还是更新缓存。</li></ul>
+        <pre><code>const key = `project:${tenantId}:${projectId}:v3`
+const cached = await redis.get(key)
+if (cached) return JSON.parse(cached)
+
+const value = await repository.findProject(projectId)
+await redis.set(key, JSON.stringify(value), "EX", 60)
+return value</code></pre>
+      </section>
+    
+      <section class="article-section">
+        <h4>Redis、锁和故障降级</h4>
+        <p>Redis 适合缓存、计数、限流、会话和短期运行状态。它不是所有数据的永久事实源。分布式锁需要拥有者标识、过期时间、续约和释放校验，锁失效后业务仍要保证幂等。</p><p>Redis 故障时，系统可以回退数据库、返回旧数据、限制功能或直接失败。选择哪种降级取决于业务风险。缓存服务不能成为单点，需要容量、持久化和高可用配置。</p>
+        <ul class="article-bullets"><li>锁不是分布式事务。</li><li>所有缓存都明确 TTL 和可丢失边界。</li><li>降级行为要在发布前演练。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>NoSQL 和最终一致性</h4>
+        <p>文档、键值、列式、全文检索和图数据库有不同访问模型。PostgreSQL 可以处理大量关系型和 JSON 场景；Redis 适合高速临时状态；Elasticsearch 适合搜索；对象存储适合大文件。</p><p>跨系统更新无法依赖单库事务，常见方案包括 Outbox、事件、补偿、对账和幂等消费。最终一致性要求业务能接受短暂延迟，并让用户看到明确状态。</p>
+        <ul class="article-bullets"><li>按访问模式选择数据库，不按流行度选择。</li><li>跨系统写操作必须有补偿或对账。</li><li>数据所有权和事实来源必须明确。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能设计缓存键、TTL 和失效策略。</li><li>能识别缓存穿透、击穿和雪崩。</li><li>能为跨系统更新设计最终一致性。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>为项目详情和任务列表设计缓存，并处理写入失效、缓存故障和跨服务数据同步。</p>
+                <ul class="article-list">
+                  <li>缓存不会泄漏跨租户数据。</li><li>缓存故障时系统按预期降级。</li><li>跨服务数据最终能对账并修复。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>把 Redis 当作唯一数据库。</li><li>缓存键忽略用户和权限。</li><li>认为消息只会发送一次。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>架构师需要回答数据是否允许短暂过期、谁能接受旧值、系统故障时保留什么能力，以及跨系统不一致如何被发现和修复。</p>
+          </aside>
+        </div>
+      </article>
+    
+      <article class="chapter" data-chapter-id="async-backend">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 异步任务、队列与实时通信 已掌握">
+            <input type="checkbox" data-chapter-check="async-backend">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="async-backend" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l3">L3</span>
+              <h3>异步任务、队列与实时通信</h3>
+            </span>
+            <span class="chapter-subtitle">后台任务、幂等、重试、SSE、WebSocket 和链路追踪</span>
+            <p class="chapter-summary">长任务、峰值流量和实时推送不能都塞进一个同步 HTTP 请求。异步系统需要状态、幂等、重试、取消和可观测性。</p>
+            <span class="chapter-meta">
+              <span class="tag">队列</span><span class="tag">Worker</span><span class="tag">SSE</span><span class="tag">WebSocket</span><span class="tag">幂等</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>17</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>用户要求导出报告、批量分析或实时查看进度时，同步接口和简单日志已经不足，必须进入任务系统和事件驱动设计。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>任务队列和 Worker</h4>
+        <p>提交接口只创建任务并快速返回任务 ID，Worker 异步执行。任务状态包含等待、运行、成功、失败、取消和重试次数。任务载荷应包含业务 ID 和版本，而不是过大的文件内容。</p><p>队列提供投递、重试和并发控制，但不自动保证业务只执行一次。Worker 可能在执行成功后崩溃、消息可能重复投递，因此任务必须幂等，并能从状态和结果中判断是否已完成。</p>
+        <ul class="article-bullets"><li>任务提交和任务执行分离。</li><li>重试使用指数退避并设置上限。</li><li>失败任务进入死信队列或人工处理区。</li></ul>
+        <pre><code>await queue.add(
+  "generate-report",
+  { reportId, requestedBy: userId },
+  { jobId: `report:${reportId}`, attempts: 3 },
+)</code></pre>
+      </section>
+    
+      <section class="article-section">
+        <h4>SSE、WebSocket 和状态恢复</h4>
+        <p>SSE 适合服务端向浏览器单向推送文本事件，例如任务进度和模型流式输出。WebSocket 适合双向实时通信。两者都需要心跳、重连、事件序号和过期状态处理。</p><p>客户端断线后不能假设服务端停止任务。恢复时先查询任务状态，再从最后确认的事件继续。推送事件应带任务 ID、序号和幂等标识，重复事件不会产生重复操作。</p>
+        <ul class="article-bullets"><li>实时连接有生命周期，任务状态独立保存。</li><li>推送协议要定义事件类型和版本。</li><li>断线恢复以持久状态为准。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>可观测性和后端模块边界</h4>
+        <p>一次请求可能经过网关、API、队列、Worker、数据库和第三方服务。correlation ID 串联所有日志和 Trace。指标需要覆盖延迟、错误、吞吐、队列深度、重试和任务成功率。</p><p>后端应按业务能力划分模块，路由负责协议，服务负责规则和事务，Repository 负责数据访问。抽象只在存在真实边界和复用价值时引入，不让简单调用链被多层包装隐藏。</p>
+        <ul class="article-bullets"><li>任务状态和失败原因可查询。</li><li>慢任务、积压和死信有告警。</li><li>关键链路能按 requestId 回放。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能设计任务状态机和幂等 Worker。</li><li>能选择 SSE 或 WebSocket 并处理重连。</li><li>能建立跨服务链路追踪和告警。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>实现一个报告生成系统，覆盖提交、队列、进度推送、取消、重试、结果下载和对账。</p>
+                <ul class="article-list">
+                  <li>重复消息不会生成重复结果。</li><li>客户端重连后能看到正确进度。</li><li>积压、失败和长时间运行都有可观测指标。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>用 setTimeout 当生产任务队列。</li><li>认为任务失败就自动重试到成功。</li><li>SSE 连接断开后把任务当成已取消。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>异步架构的核心是状态与一致性。架构师需要定义任务所有权、幂等边界、恢复方式、容量上限和失败后的业务影响。</p>
+          </aside>
+        </div>
+      </article>
+    
+        
+          <section class="stage-heading" id="stage-production">
+            <small>阶段 04</small>
+            <h2>生产与架构</h2>
+            <p>理解容器、CI/CD、容量、可靠性、安全、合规、系统设计和技术演进，开始承担系统级责任。 · 0/4 已掌握</p>
+          </section>
+          
+      <article class="chapter" data-chapter-id="delivery">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 容器、CI/CD 与发布 已掌握">
+            <input type="checkbox" data-chapter-check="delivery">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="delivery" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l3">L3</span>
+              <h3>容器、CI/CD 与发布</h3>
+            </span>
+            <span class="chapter-subtitle">环境一致性、质量门禁、迁移、灰度、回滚和备份</span>
+            <p class="chapter-summary">生产交付不是把代码放到服务器，而是让代码、配置和数据库迁移可以在可观察、可回滚的流水线中安全上线。</p>
+            <span class="chapter-meta">
+              <span class="tag">Docker</span><span class="tag">CI/CD</span><span class="tag">发布</span><span class="tag">回滚</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>18</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>从开发环境到生产环境，问题往往来自配置、数据库、网络和发布顺序。没有交付系统，代码质量无法转化为稳定业务能力。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>不可变构建和环境一致性</h4>
+        <p>应用应先构建成不可变产物，再部署到不同环境。Docker 镜像通常使用多阶段构建，运行阶段只包含必要文件和依赖，并通过固定基础镜像和锁文件保证可重现。</p><p>配置通过环境变量、挂载文件或 Secret Manager 注入，不写进镜像。容器以非 root 用户运行，限制资源，提供健康检查和退出信号处理。</p>
+        <ul class="article-bullets"><li>同一镜像在测试和生产使用相同代码。</li><li>镜像不包含 Secret 和本地缓存。</li><li>健康检查区分存活、就绪和能力状态。</li></ul>
+        <pre><code>FROM node:22-alpine AS build
+WORKDIR /app
+COPY package.json pnpm-lock.yaml ./
+RUN corepack enable &amp;&amp; pnpm install --frozen-lockfile
+COPY . .
+RUN pnpm build
+
+FROM node:22-alpine
+USER node
+COPY --from=build /app/dist ./dist
+CMD ["node", "dist/server.js"]</code></pre>
+      </section>
+    
+      <section class="article-section">
+        <h4>CI/CD 与质量门禁</h4>
+        <p>CI 在每次提交和 Pull Request 中执行格式、Lint、类型、测试和构建。CD 把通过检查的产物发布到目标环境。流水线要保存构建日志、测试报告、版本和制品校验值。</p><p>发布包括应用版本、配置变更和数据库迁移。数据库迁移应设计扩展、回填、切换和清理阶段，让旧代码和新代码可以共同运行一段时间。</p>
+        <ul class="article-bullets"><li>主分支始终处于可发布状态。</li><li>迁移和代码发布顺序明确。</li><li>发布记录关联提交、制品和操作人。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>灰度、回滚和恢复</h4>
+        <p>滚动发布逐步替换实例，蓝绿发布同时维护两组环境，金丝雀发布先让少量流量进入新版本。选择方式取决于资源成本、兼容要求和回滚速度。</p><p>回滚不只回滚应用镜像，还要考虑数据库结构和已写入数据。发布前应验证关键指标、错误率、延迟和业务成功率。恢复演练验证备份、权限、Runbook 和团队响应。</p>
+        <ul class="article-bullets"><li>发布后先观察关键用户路径。</li><li>回滚方案必须在发布前验证。</li><li>数据库备份必须实际恢复过一次。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能构建可重现的容器产物。</li><li>能设计质量门禁和兼容迁移。</li><li>能制定发布、回滚和恢复流程。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>为全栈应用建立 CI/CD、容器构建、数据库迁移、灰度发布和回滚演练。</p>
+                <ul class="article-list">
+                  <li>任意环境都能部署同一构建产物。</li><li>数据库迁移允许新旧代码并存。</li><li>发布失败可以按流程回滚并恢复服务。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>在生产机器上现场安装依赖。</li><li>把 Secret 打进镜像或仓库。</li><li>数据库先删除旧字段再发布新代码。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>架构师需要把发布设计成系统能力。版本兼容、迁移窗口、流量切换和恢复目标应提前定义，不能依靠发布当天的人为操作。</p>
+          </aside>
+        </div>
+      </article>
+    
+      <article class="chapter" data-chapter-id="scale-reliability">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 容量、弹性、可观测性与容灾 已掌握">
+            <input type="checkbox" data-chapter-check="scale-reliability">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="scale-reliability" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l4">L4</span>
+              <h3>容量、弹性、可观测性与容灾</h3>
+            </span>
+            <span class="chapter-subtitle">负载均衡、缓存、SLO、故障域、RPO 和 RTO</span>
+            <p class="chapter-summary">生产系统需要根据真实负载和故障设计容量、降级、恢复和成本，而不是假设所有依赖永远可用。</p>
+            <span class="chapter-meta">
+              <span class="tag">容量</span><span class="tag">SLO</span><span class="tag">容灾</span><span class="tag">可观测性</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>19</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>系统进入生产后，稳定性不只是代码问题。容量、依赖、告警、恢复和成本会共同决定服务是否能长期交付。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>容量、吞吐和延迟</h4>
+        <p>容量设计从峰值流量、请求成本、数据库连接、缓存命中、队列积压和外部依赖限制开始。平均值不能代表高峰，P95/P99 延迟能暴露用户体验和资源竞争。</p><p>扩容应用实例通常最容易，但数据库连接和下游配额不会无限增加。需要为热门接口设计缓存、分页、批处理和限流，并测算每个扩缩容步骤的实际收益。</p>
+        <ul class="article-bullets"><li>容量预算包含应用、数据库、缓存、队列和第三方。</li><li>慢依赖要有超时、熔断和降级。</li><li>扩容策略不能放大数据库连接。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>SLO、告警和故障域</h4>
+        <p>SLO 用可观测指标表达服务目标，例如可用性、延迟和成功率。错误预算帮助团队判断何时优先修复稳定性，而不是不断增加功能。</p><p>故障域可能来自机房、可用区、数据库主节点、缓存、第三方服务或错误配置。高可用要求消除单点、验证故障切换，并避免一个实例故障演变成整个系统故障。</p>
+        <ul class="article-bullets"><li>告警对应明确的用户影响和处理动作。</li><li>关键依赖准备超时、重试和降级。</li><li>故障演练验证实际恢复时间。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>备份、容灾和成本</h4>
+        <p>RPO 表示允许丢失多少数据，RTO 表示允许停机多久。它们决定备份频率、复制方式、恢复工具和人员流程。对象存储、数据库配置和密钥都要纳入恢复范围。</p><p>成本来自计算、存储、网络、日志、模型调用和运维人力。架构师需要把性能、可靠性和成本放在同一张决策表中，明确哪些能力值得付费，哪些可以降级。</p>
+        <ul class="article-bullets"><li>备份恢复流程有责任人和演练记录。</li><li>日志和指标有保留策略。</li><li>成本与业务价值、SLO 一起评估。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能估算关键路径容量和限制。</li><li>能定义 SLO、告警和降级策略。</li><li>能设计备份、容灾和成本预算。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>为一个中型系统定义容量模型、SLO、依赖故障矩阵、RPO/RTO 和成本预算。</p>
+                <ul class="article-list">
+                  <li>容量假设有数据支持并有峰值余量。</li><li>关键依赖故障时有明确降级行为。</li><li>恢复演练证明 RPO 和 RTO 可达成。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>只按平均值做容量估算。</li><li>所有异常都变成高优先级告警。</li><li>有备份但没有恢复过。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>架构师的核心工作是取舍。需要在可靠性、延迟、成本、复杂度和交付速度之间做显式选择，并说明选择的边界。</p>
+          </aside>
+        </div>
+      </article>
+    
+      <article class="chapter" data-chapter-id="security-compliance">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 安全、合规与供应链 已掌握">
+            <input type="checkbox" data-chapter-check="security-compliance">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="security-compliance" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l4">L4</span>
+              <h3>安全、合规与供应链</h3>
+            </span>
+            <span class="chapter-subtitle">威胁建模、敏感数据、依赖漏洞和合规边界</span>
+            <p class="chapter-summary">生产安全要覆盖代码、依赖、镜像、配置、密钥、网络、数据和人员流程。AI 和自动化系统还需要额外的提示注入与工具越权防护。</p>
+            <span class="chapter-meta">
+              <span class="tag">威胁建模</span><span class="tag">数据安全</span><span class="tag">供应链</span><span class="tag">合规</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>20</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>生产系统中，安全问题是业务连续性和信任问题。一次越权、密钥泄漏或敏感数据外发可能造成的损失远超普通故障。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>威胁建模和多层防护</h4>
+        <p>威胁建模从资产、入口、信任边界和攻击路径出发。常见风险包括 XSS、CSRF、SQL 注入、SSRF、文件上传、越权、密钥泄漏和依赖漏洞。防护不能只依赖一个中间件。</p><p>输入校验、输出编码、参数化查询、最小权限、网络限制、Secret 管理和审计共同构成立体边界。内部服务也需要身份认证和授权，不能默认内网可信。</p>
+        <ul class="article-bullets"><li>每个入口都明确信任边界。</li><li>危险能力默认关闭。</li><li>安全事件有检测、隔离和恢复流程。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>敏感数据、加密和合规</h4>
+        <p>识别个人、项目、设备、位置和业务敏感数据，明确收集目的、存储位置、访问角色、保留期限和删除方式。传输和存储加密解决窃听风险，但不替代权限控制。</p><p>数据出境、第三方模型调用、日志保留和备份跨区域都需要合规评估。脱敏、最小化和访问审计是最常见的基础措施。</p>
+        <ul class="article-bullets"><li>敏感字段不进入日志、Prompt 和无必要缓存。</li><li>密钥有轮换和吊销机制。</li><li>删除和导出请求有明确流程。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>供应链和自动化安全</h4>
+        <p>依赖、构建工具、基础镜像、CI 凭证和发布脚本都属于供应链。需要锁定版本、扫描漏洞、限制构建权限、保护制品和验证发布来源。</p><p>AI Agent 的文档、工具结果和外部内容可能包含间接提示注入。模型不能直接决定权限边界，工具参数必须再次校验，高风险操作需要人工确认。</p>
+        <ul class="article-bullets"><li>CI 令牌权限最小化。</li><li>镜像和制品有来源校验。</li><li>Agent 只能调用白名单工具。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能按信任边界做威胁建模。</li><li>能设计敏感数据生命周期和密钥策略。</li><li>能建立依赖与 AI 工具安全边界。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>为一个全栈系统完成安全评审，覆盖 Web 漏洞、权限、依赖、Secret、日志、备份和 Agent 工具调用。</p>
+                <ul class="article-list">
+                  <li>所有外部输入都经过校验和权限检查。</li><li>敏感数据在传输、存储和日志中有明确规则。</li><li>关键依赖和高风险工具可审计、可撤销。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>使用内部网络作为唯一安全边界。</li><li>只做前端校验。</li><li>将模型输出当作可信工具参数。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>安全是架构约束，不是上线前检查表。架构师需要在数据流、权限、依赖和自动化能力设计初期就把威胁模型纳入决策。</p>
+          </aside>
+        </div>
+      </article>
+    
+      <article class="chapter" data-chapter-id="system-design">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 系统设计与数据流 已掌握">
+            <input type="checkbox" data-chapter-check="system-design">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="system-design" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l4">L4</span>
+              <h3>系统设计与数据流</h3>
+            </span>
+            <span class="chapter-subtitle">从需求到模块、数据、容量、故障和演进</span>
+            <p class="chapter-summary">系统设计不是堆技术名词，而是根据业务目标和约束设计可运行、可扩展、可恢复、可演进的系统。</p>
+            <span class="chapter-meta">
+              <span class="tag">系统设计</span><span class="tag">数据流</span><span class="tag">模块边界</span><span class="tag">架构图</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>21</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>前端开发者开始负责整条业务链路后，设计问题会从组件状态升级为数据、服务、容量和故障问题。系统设计能力是架构师的核心分水岭。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>明确需求和关键路径</h4>
+        <p>先明确用户角色、核心流程、数据规模、一致性、延迟、并发和安全要求。然后识别关键路径：哪些操作决定用户体验，哪些数据必须实时，哪些可以异步，哪些失败需要用户立即知道。</p><p>关键路径越短越好。每个同步依赖、网络跳数和数据库查询都会增加延迟和故障概率。不能为了形式上的解耦，把简单流程拆成大量远程调用。</p>
+        <ul class="article-bullets"><li>先写业务不变量和失败影响。</li><li>识别读多写少、写多读少和热点路径。</li><li>明确同步和异步边界。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>模块、数据和依赖方向</h4>
+        <p>模块应围绕业务能力划分，并拥有自己的数据访问边界。依赖方向保持稳定，公共能力通过明确接口提供。共享数据库会让服务看似拆分，实际仍然耦合。</p><p>数据所有权要明确：哪个模块创建、修改和删除数据，其他模块通过接口或事件读取。跨模块写操作需要事务、事件和补偿策略。</p>
+        <ul class="article-bullets"><li>单个业务概念有明确数据所有者。</li><li>跨模块依赖通过契约表达。</li><li>不为未来可能扩展提前拆服务。</li></ul>
+        <pre><code>用户请求
+  -&gt; API 服务
+  -&gt; 业务模块
+  -&gt; 数据访问
+  -&gt; PostgreSQL
+
+长任务
+  -&gt; 队列
+  -&gt; Worker
+  -&gt; 对象存储 / 数据库
+  -&gt; SSE 状态推送</code></pre>
+      </section>
+    
+      <section class="article-section">
+        <h4>容量、故障和演进</h4>
+        <p>系统设计需要给出容量假设、瓶颈、降级、SLO、RPO 和 RTO。故障分析要覆盖依赖失败、热点、重复请求、消息丢失、缓存不一致和发布回滚。</p><p>架构应支持小步演进。先用模块化单体验证业务边界，真实出现独立扩容、团队边界或故障隔离需求时再拆分。每次拆分都要说明收益、成本和迁移路径。</p>
+        <ul class="article-bullets"><li>首版方案可独立交付。</li><li>架构图标注同步、异步和失败路径。</li><li>演进计划包含兼容和回退。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能从需求识别关键路径和系统边界。</li><li>能设计数据所有权和一致性模型。</li><li>能给出容量、故障和演进方案。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>设计一个中型全栈业务系统，输出模块图、数据流、关键表、接口、容量估算、故障矩阵和分阶段实施计划。</p>
+                <ul class="article-list">
+                  <li>设计与业务需求和不变量一致。</li><li>关键组件都有存在理由和失败策略。</li><li>方案可以分阶段实施并验证。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>一开始就设计所有未来功能。</li><li>只画组件图不说明数据流。</li><li>为微服务而微服务。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>架构师不是选择最多技术的人，而是能解释为什么这样设计、代价是什么、失败时怎么办，以及团队如何逐步演进的人。</p>
+          </aside>
+        </div>
+      </article>
+    
+        
+          <section class="stage-heading" id="stage-architect">
+            <small>阶段 05</small>
+            <h2>全栈架构师</h2>
+            <p>从需求、领域、取舍、风险、成本和团队工程能力出发，做能够落地并长期演进的架构决策。 · 0/3 已掌握</p>
+          </section>
+          
+      <article class="chapter" data-chapter-id="requirements-domain">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 需求、领域建模与技术战略 已掌握">
+            <input type="checkbox" data-chapter-check="requirements-domain">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="requirements-domain" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l4">L4</span>
+              <h3>需求、领域建模与技术战略</h3>
+            </span>
+            <span class="chapter-subtitle">从页面需求走向业务不变量、领域边界和演进方向</span>
+            <p class="chapter-summary">架构师首先要把业务问题说清楚。没有业务不变量、角色和流程，技术方案只是在猜测。</p>
+            <span class="chapter-meta">
+              <span class="tag">需求分析</span><span class="tag">领域建模</span><span class="tag">技术战略</span><span class="tag">路线图</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>22</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>从实现者走向架构师，第一步不是学更多框架，而是学会把模糊需求转换成清晰约束、边界和优先级。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>从功能清单到业务不变量</h4>
+        <p>需求文档常写“用户可以创建任务”，但架构师要进一步问：谁可以创建、任务属于谁、状态如何流转、失败能否恢复、删除后数据是否保留、并发创建是否允许。业务不变量是系统必须永远保持的规则。</p><p>例如项目必须至少有一个负责人、完成任务必须记录执行人、权限变更不能影响历史审计。这些规则应落实到数据库约束、服务逻辑、接口错误和测试中，而不是只出现在文档里。</p>
+        <ul class="article-bullets"><li>识别角色、资源、动作和状态。</li><li>业务不变量必须能自动验证。</li><li>需求编号与实现、测试建立追踪关系。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>领域边界和统一语言</h4>
+        <p>领域建模关注业务概念之间的关系，而不是数据库表数量。项目、任务、成员、审计、设备和报告都有各自生命周期。团队应该使用统一语言描述这些概念，避免接口、代码和产品文档各说一套。</p><p>边界划分应考虑变化频率、数据所有权、权限和团队职责。一个模块应能独立解释自己的规则，并只通过明确接口对外协作。</p>
+        <ul class="article-bullets"><li>模块边界围绕业务能力，而不是技术层。</li><li>数据所有权明确。</li><li>公共术语有稳定定义。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>技术战略和演进路线</h4>
+        <p>技术战略不是列技术栈，而是说明未来一段时间业务目标、关键能力、技术债、风险和投入顺序。例如先解决数据一致性还是先做多租户，先优化首屏还是先拆分服务。</p><p>演进路线应包含里程碑、可验证结果和退出条件。每一步都要能独立交付价值，不能把大规模重写作为唯一计划。</p>
+        <ul class="article-bullets"><li>技术目标与业务目标关联。</li><li>每个阶段有可验证结果。</li><li>旧系统有明确迁移和下线路径。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能从业务需求提取不变量和失败影响。</li><li>能建立统一语言和领域边界。</li><li>能制定分阶段技术演进路线。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>选择一个真实业务系统，输出角色、流程、不变量、领域边界、技术风险和四阶段演进路线。</p>
+                <ul class="article-list">
+                  <li>每个关键规则都有实现和验证位置。</li><li>模块边界和数据所有权清晰。</li><li>路线图包含可交付价值和退出条件。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>直接从技术栈出发倒推业务。</li><li>把数据库表当作领域模型。</li><li>没有迁移路径就开始大重写。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>架构师的价值首先体现在问题定义上。只有业务边界和约束正确，技术选择才有意义。</p>
+          </aside>
+        </div>
+      </article>
+    
+      <article class="chapter" data-chapter-id="architecture-decisions">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 架构决策、风险与取舍 已掌握">
+            <input type="checkbox" data-chapter-check="architecture-decisions">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="architecture-decisions" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l4">L4</span>
+              <h3>架构决策、风险与取舍</h3>
+            </span>
+            <span class="chapter-subtitle">ADR、容量、成本、可逆性和跨团队影响</span>
+            <p class="chapter-summary">架构决策没有绝对正确，只有对当前约束更合适。架构师需要记录背景、选项、取舍、风险和回退方式。</p>
+            <span class="chapter-meta">
+              <span class="tag">ADR</span><span class="tag">技术决策</span><span class="tag">风险</span><span class="tag">成本</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>23</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>项目会不断出现技术选择。没有决策记录，团队会重复讨论、依赖个人记忆，甚至同时维护互相冲突的方案。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>决策背景和候选方案</h4>
+        <p>一个可执行的决策记录至少包含背景、约束、选项、结论和后果。比如选择 PostgreSQL 还是 MongoDB，应说明数据结构、查询模式、一致性、团队经验、运维能力和迁移成本，而不是只说“更适合”。</p><p>候选方案应控制在能真正执行的范围内。每个方案说明优势、代价、适用条件和不适用条件。架构师要从最小可行方案出发，避免提前设计所有未来。</p>
+        <ul class="article-bullets"><li>决策围绕明确问题，不围绕技术偏好。</li><li>至少比较两个可实施方案。</li><li>记录没有选择某方案的代价。</li></ul>
+        <pre><code>ADR-004：任务列表采用游标分页
+
+背景：任务数量持续增长，OFFSET 分页出现性能和漂移。
+决策：使用 created_at + id 作为游标。
+代价：客户端不能随机跳页。
+回退：保留兼容接口一个发布周期。</code></pre>
+      </section>
+    
+      <section class="article-section">
+        <h4>风险、可逆性和成本</h4>
+        <p>高风险和不可逆决策需要更多验证。数据模型、公开接口、权限模型和跨团队协议一旦发布，回退成本较高。可以先通过小范围试点、影子流量、可兼容字段和迁移双写降低风险。</p><p>成本包括开发、运行、认知、迁移和机会成本。一个架构方案即使技术上先进，如果团队没有能力维护，也会长期增加故障和交付成本。</p>
+        <ul class="article-bullets"><li>区分可逆和不可逆决策。</li><li>用试点和指标验证假设。</li><li>复杂度必须换来明确收益。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>记录后果和复盘</h4>
+        <p>决策执行后要观察结果是否符合预期。如果指标没有改善，就更新或废弃方案，而不是维护错误的原判断。ADR 不是审批文件，而是未来团队理解上下文的工具。</p><p>复盘关注假设、数据和影响，不评价个人。失败决策也能提供边界信息，帮助团队改进评估方式。</p>
+        <ul class="article-bullets"><li>记录决策日期、负责人和状态。</li><li>用业务指标验证结果。</li><li>决策变化时更新而不是隐藏旧记录。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能写出背景清晰的 ADR。</li><li>能识别可逆性、风险和成本。</li><li>能用指标验证决策结果。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>为一个数据库、接口或前端框架选择撰写 ADR，并在一个迭代后根据数据复盘。</p>
+                <ul class="article-list">
+                  <li>决策能解释为什么不选其他方案。</li><li>风险有缓解和回退计划。</li><li>结果能通过指标或用户反馈验证。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>结论先行，背景只写几句免责声明。</li><li>把个人偏好写成架构原则。</li><li>决策后从不验证假设。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>架构师的权威来自透明和可验证的取舍，而不是技术名词。好的决策让团队理解边界，也能在条件变化时安全调整。</p>
+          </aside>
+        </div>
+      </article>
+    
+      <article class="chapter" data-chapter-id="team-engineering">
+        <div class="chapter-head">
+          <label class="chapter-check" aria-label="标记 团队工程能力与架构演进 已掌握">
+            <input type="checkbox" data-chapter-check="team-engineering">
+          </label>
+          <button class="chapter-toggle" type="button" data-chapter-toggle="team-engineering" aria-expanded="false">
+            <span class="chapter-title-row">
+              <span class="level-tag level-l4">L4</span>
+              <h3>团队工程能力与架构演进</h3>
+            </span>
+            <span class="chapter-subtitle">标准、自动化、代码健康、知识恢复和持续交付</span>
+            <p class="chapter-summary">架构最终由团队持续维护。只有把规则、工具、文档和反馈机制沉淀下来，系统才具备长期演进能力。</p>
+            <span class="chapter-meta">
+              <span class="tag">团队协作</span><span class="tag">代码健康</span><span class="tag">自动化</span><span class="tag">架构演进</span>
+            </span>
+          </button>
+          <span class="chapter-side">
+            <span>24</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="chapter-body" hidden="">
+          <div class="article-section">
+            <h4>为什么学</h4>
+            <p>架构不是个人完成的静态设计，而是团队每天通过代码、流程和工具共同维护的系统。</p>
+          </div>
+
+          
+      <section class="article-section">
+        <h4>把标准变成自动化</h4>
+        <p>命名、格式化、提交信息、接口错误、权限规则和测试策略如果只靠口头约定，规模变大后一定会漂移。应把确定性规则放到格式工具、Lint、类型检查、Schema、生成器和 CI 中。</p><p>代码审查聚焦行为、权限、边界和风险。机械问题交给自动化，避免审查反复讨论空格和括号。</p>
+        <ul class="article-bullets"><li>能被脚本判断的规则自动化。</li><li>自动化失败要能指出具体文件和原因。</li><li>代码审查优先发现错误、回归和权限漏洞。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>代码健康和技术债</h4>
+        <p>技术债不是所有旧代码，而是会持续增加变更成本、故障风险或认知负担的问题。需要按影响范围、故障概率、修复成本和业务时机排序。</p><p>重构应小步进行，每一步保持可测试、可发布和可回退。不要等到系统无法维护时进行大爆炸式重写。</p>
+        <ul class="article-bullets"><li>技术债和业务目标关联。</li><li>重构过程保持主分支可发布。</li><li>删除旧路径有明确时间和负责人。</li></ul>
+        
+      </section>
+    
+      <section class="article-section">
+        <h4>知识恢复与持续交付</h4>
+        <p>架构文档应描述当前事实、关键边界、请求链路、数据流和运行方式。ADR 记录为什么这样选。README 记录如何启动、测试和部署。文档必须随代码更新，不能长期失真。</p><p>持续交付依赖小批量变更、快速反馈、自动化验证和可观测发布。团队需要能独立发现、定位、回滚和恢复问题。</p>
+        <ul class="article-bullets"><li>新人能根据文档恢复项目上下文。</li><li>关键模块有负责人和运维手册。</li><li>每次发布都能观察业务和技术指标。</li></ul>
+        
+      </section>
+    
+
+          <div class="article-section">
+            <div class="article-grid">
+              <div>
+                <h4>学习目标</h4>
+                <ul class="article-list">
+                  <li>能把工程规范转化为自动化门禁。</li><li>能排序并渐进偿还技术债。</li><li>能建立文档、复盘和持续交付机制。</li>
+                </ul>
+              </div>
+              <div>
+                <h4>实践验收</h4>
+                <p>为一个团队设计工程规范、质量门禁、文档体系、技术债台账和发布复盘流程。</p>
+                <ul class="article-list">
+                  <li>新成员能按文档完成首次交付。</li><li>质量规则由工具持续执行。</li><li>技术债有优先级、负责人和退出标准。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-section">
+            <h4>常见误区</h4>
+            <ul class="article-list">
+              <li>规范只写在文档，没有工具执行。</li><li>把所有重构都当成技术债。</li><li>架构文档和真实代码长期不一致。</li>
+            </ul>
+          </div>
+
+          <aside class="architect-lens">
+            <h4>全栈架构师视角</h4>
+            <p>真正成熟的架构师不只设计系统，还设计团队如何理解、修改、发布和恢复系统。可维护性、知识和自动化是架构能力的一部分。</p>
+          </aside>
+        </div>
+      </article>
+    
+        </div>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="./data.js"></script>
+    <script src="./chapters-foundation.js"></script>
+    <script src="./chapters-application.js"></script>
+    <script src="./chapters-backend.js"></script>
+    <script src="./chapters-production.js"></script>
+    <script src="./chapters-architect.js"></script>
+    <script src="./app.js"></script>
+  
+
+</body></html>
