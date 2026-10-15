@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="从初级前端到全栈架构师的内容型学习手册，覆盖 HTML、CSS、JavaScript、TypeScript、Vue、React、Node、数据库、部署、安全与系统设计。"
+    />
+    <title>从初级前端到全栈架构师</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">F2A</div>
+          <div>
+            <h1>从初级前端到全栈架构师</h1>
+            <p>内容型学习手册：先理解，再用项目验证</p>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <div class="overall-progress">
+            <div class="progress-copy">
+              <span>学习进度</span>
+              <strong id="overallProgressText">0 / 0</strong>
+            </div>
+            <div
+              class="progress"
+              id="overallProgress"
+              role="progressbar"
+              aria-label="学习进度"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+            >
+              <span style="width: 0%"></span>
+            </div>
+          </div>
+          <button class="btn" type="button" id="resetProgress">重置进度</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <aside class="sidebar" aria-label="章节导航">
+        <div class="sidebar-heading">
+          <span>成长路线</span>
+          <span id="sidebarProgressText">0%</span>
+        </div>
+        <nav class="chapter-nav" id="chapterNav"></nav>
+      </aside>
+
+      <main class="main-content">
+        <section class="growth-strip" aria-label="五个成长阶段">
+          <div class="growth-track" id="growthTrack"></div>
+        </section>
+
+        <div class="toolbar">
+          <label class="field">
+            <span class="field-label">搜索内容</span>
+            <span class="search-wrap">
+              <input
+                class="search-input"
+                id="searchInput"
+                type="search"
+                placeholder="搜索概念、机制、实践或误区"
+                autocomplete="off"
+              />
+            </span>
+          </label>
+
+          <div class="field">
+            <span class="field-label">成长阶段</span>
+            <div class="segmented" aria-label="按阶段筛选">
+              <button class="segment" type="button" data-level="all" aria-pressed="true">
+                全部
+              </button>
+              <button class="segment" type="button" data-level="L1" aria-pressed="false">
+                L1
+              </button>
+              <button class="segment" type="button" data-level="L2" aria-pressed="false">
+                L2
+              </button>
+              <button class="segment" type="button" data-level="L3" aria-pressed="false">
+                L3
+              </button>
+              <button class="segment" type="button" data-level="L4" aria-pressed="false">
+                L4
+              </button>
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="field-label">学习状态</span>
+            <div class="segmented" aria-label="按状态筛选">
+              <button class="segment" type="button" data-status="all" aria-pressed="true">
+                全部
+              </button>
+              <button class="segment" type="button" data-status="open" aria-pressed="false">
+                未掌握
+              </button>
+              <button class="segment" type="button" data-status="done" aria-pressed="false">
+                已掌握
+              </button>
+            </div>
+          </div>
+
+          <button class="btn" type="button" id="toggleExpand">展开全部</button>
+        </div>
+
+        <section class="next-step" id="nextStep" aria-live="polite"></section>
+        <p class="result-line" id="resultLine"></p>
+        <div class="chapter-list" id="chapterList"></div>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="./data.js"></script>
+    <script src="./chapters-foundation.js"></script>
+    <script src="./chapters-application.js"></script>
+    <script src="./chapters-backend.js"></script>
+    <script src="./chapters-production.js"></script>
+    <script src="./chapters-agent-core.js"></script>
+    <script src="./chapters-agent-delivery.js"></script>
+    <script src="./chapters-architect.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

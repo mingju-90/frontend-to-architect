@@ -1,26 +1,50 @@
 # 从初级前端到全栈架构师
 
-仓库按前端、Node 中间件和知识文档三个部分组织，用于逐步实现 AI 对话与受控工具系统。
+仓库按静态学习手册、Vue 3 AI 对话框、Node 中间件和知识文档组织，用于逐步实现 AI 对话与受控工具系统。
 
 ## 仓库结构
 
 ```text
 .
-├── frontend/   # AI 对话框与交互式学习页面
+├── guide/      # 静态学习手册
+├── frontend/   # Vue 3 AI 对话框
 ├── server/     # Node 中间件、模型接入与业务工具
 └── docs/       # AI 智能体架构、工具契约和开发计划
 ```
 
-## 前端
+## 静态学习手册
 
-前端目前是零构建步骤的静态页面。本地启动：
+本地启动静态页面：
 
 ```bash
-cd frontend
+cd guide
 python3 -m http.server 4173
 ```
 
 然后访问 `http://localhost:4173`。
+
+## Vue 3 AI 对话框
+
+首次运行先安装前端依赖：
+
+```bash
+pnpm --dir frontend install
+```
+
+在仓库根目录同时启动 Vue 和 Node：
+
+```bash
+pnpm dev
+```
+
+`Ctrl+C` 会同步关闭前端和 Node 中间件。也可以分别运行：
+
+```bash
+pnpm dev:frontend
+pnpm dev:server
+```
+
+Vue 默认开发地址为 `http://localhost:5173`。
 
 ## Node 中间件
 
