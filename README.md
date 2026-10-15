@@ -1,29 +1,44 @@
-# 从初级前端到全栈架构师学习手册
+# 从初级前端到全栈架构师
 
-直接打开 `index.html` 即可使用交互式学习手册。
+仓库按前端、Node 中间件和知识文档三个部分组织，用于逐步实现 AI 对话与受控工具系统。
 
-## 内容结构
+## 仓库结构
 
-- 前端起步：HTML、CSS、JavaScript、浏览器和 Git。
-- 前端应用与工程：TypeScript、Vue、React、状态、测试、构建和性能。
-- 服务端与数据：Node、HTTP、认证、SQL、事务、索引、缓存、队列和可观测性。
-- 生产与架构：容器、CI/CD、容量、可靠性、安全、系统设计。
-- AI 智能体全栈项目：Vue 3、Fastify、DeepSeek、工具调用、审批、审计和开发路线。
-- 全栈架构师：需求、领域、ADR、风险、成本和团队工程能力。
+```text
+.
+├── frontend/   # AI 对话框与交互式学习页面
+├── server/     # Node 中间件、模型接入与业务工具
+└── docs/       # AI 智能体架构、工具契约和开发计划
+```
 
-## AI 智能体文档
+## 前端
 
+前端目前是零构建步骤的静态页面。本地启动：
+
+```bash
+cd frontend
+python3 -m http.server 4173
+```
+
+然后访问 `http://localhost:4173`。
+
+## Node 中间件
+
+中间件使用 Node.js 22+，当前提供健康检查和聊天接口占位实现：
+
+```bash
+cd server
+npm run dev
+```
+
+默认监听 `http://localhost:8787`，健康检查地址为 `http://localhost:8787/health`。
+
+## 知识文档
+
+- [文档索引](./docs/README.md)
 - [总体架构](./docs/ai-agent-architecture.md)
 - [工具契约](./docs/ai-agent-tool-contract.md)
 - [自研开发计划](./docs/ai-agent-development-plan.md)
 - [前端交互知识库与客户端动作](./docs/frontend-interaction-knowledge.md)
 
-## 推荐起点
-
-如果 Node 和智能体都不熟悉，先阅读以下顺序：
-
-1. `index.html` 中“AI 智能体全栈项目”阶段。
-2. `docs/ai-agent-architecture.md`。
-3. `docs/ai-agent-tool-contract.md`。
-4. `docs/ai-agent-development-plan.md`。
-5. 按开发计划完成第一个只读工具闭环。
+建议先阅读总体架构和开发计划，再按阶段实现聊天、SSE、只读工具以及审批闭环。
